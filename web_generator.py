@@ -32,10 +32,22 @@ def generate_html_v2():
         
         now_str = datetime.now().strftime("%Y-%m-%d %H:%M")
         
-        # 構建標的卡片 (V2 加強版)
+        # 構建標的卡片 (V3 加強版：加入法人數據)
         cards_html = ""
         for i, row in top_5.iterrows():
             badge_color = "bg-rose-500" if row['漲幅%'] > 7 else "bg-orange-500"
+            trust_buy = row.get('投信買超', 0)
+            foreign_buy = row.get('外資買超', 0)
+            
+            # 法人標籤
+            inst_tag = ""
+            if trust_buy > 500 and foreign_buy > 1000:
+                inst_tag = '<span class="px-2 py-1 bg-amber-100 text-amber-700 text-[10px] font-black rounded border border-amber-200">🌟 法人雙強買超</span>'
+            elif trust_buy > 500:
+                inst_tag = '<span class="px-2 py-1 bg-blue-100 text-blue-700 text-[10px] font-black rounded border border-blue-200">🔷 投信認養股</span>'
+            elif foreign_buy > 1000:
+                inst_tag = '<span class="px-2 py-1 bg-purple-100 text-purple-700 text-[10px] font-black rounded border border-purple-200">🌍 外資大買</span>'
+
             cards_html += f"""
             <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-8 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-50 rounded-bl-full -mr-12 -mt-12 transition-all group-hover:bg-indigo-100"></div>
@@ -56,6 +68,18 @@ def generate_html_v2():
                     </p>
                 </div>
 
+                <!-- 法人籌碼區塊 -->
+                <div class="grid grid-cols-2 gap-4 mb-6 p-4 bg-slate-50 rounded-xl border border-slate-100 relative">
+                    <div class="flex flex-col">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase mb-1">投信買超</span>
+                        <span class="text-sm font-black {'text-rose-500' if trust_buy > 0 else 'text-slate-600'}">{trust_buy:+,d} 張</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase mb-1">外資買超</span>
+                        <span class="text-sm font-black {'text-rose-500' if foreign_buy > 0 else 'text-slate-600'}">{foreign_buy:+,d} 張</span>
+                    </div>
+                </div>
+
                 <div class="grid grid-cols-2 gap-4 pt-6 border-t border-gray-50 relative">
                     <div class="flex flex-col">
                         <span class="text-[10px] font-bold text-gray-400 uppercase">量能倍率</span>
@@ -67,9 +91,10 @@ def generate_html_v2():
                     </div>
                 </div>
                 
-                <div class="mt-4 flex items-center space-x-2">
-                    <span class="px-2 py-1 bg-green-50 text-green-600 text-[10px] font-bold rounded">多頭排列 ✅</span>
-                    <span class="px-2 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded">突破意圖 {row['突破意圖']}</span>
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-green-50 text-green-600 text-[10px] font-bold rounded border border-green-100">多頭排列 ✅</span>
+                    <span class="px-2 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded border border-blue-100">突破意圖 {row['突破意圖']}</span>
+                    {inst_tag}
                 </div>
             </div>
             """
@@ -77,12 +102,15 @@ def generate_html_v2():
         table_rows = ""
         for _, row in df.iterrows():
             change_class = "text-rose-600" if row['漲幅%'] > 0 else "text-emerald-600"
+            trust_val = row.get('投信買超', 0)
+            foreign_val = row.get('外資買超', 0)
             table_rows += f"""
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
                 <td class="px-6 py-4 text-sm font-black text-gray-900">{row['代號']}</td>
                 <td class="px-6 py-4 text-sm font-black {change_class}">{row['漲幅%']}%</td>
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">{row['現價']}</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">{row['量能倍率']}x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">{trust_val:+,d} / {foreign_val:+,d}</td>
                 <td class="px-6 py-4 text-sm text-center">
                     <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">{row['多頭排列']}</span>
                 </td>
