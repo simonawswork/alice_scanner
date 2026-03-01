@@ -100,6 +100,15 @@ def scan_logic(symbol, name, inst_map):
             if inst["投信"] > 0: score += 5 
             if inst["外資"] > 0: score += 2
             
+            # 計算壓力與支撐 (V3.3: 基於近 40 日 K 線)
+            sup1 = df['Low'].iloc[-10:].min()
+            sup2 = df['Low'].iloc[-20:].min()
+            res1 = df['High'].iloc[-20:].max()
+            res2 = df['High'].iloc[-40:].max()
+            if latest['Close'] >= res1:
+                res1 = res2
+                res2 = round(res1 * 1.07, 2) # 若創波段高，設 7% 心理壓力
+            
             return {
                 "代號": symbol,
                 "名稱": name,
@@ -111,6 +120,10 @@ def scan_logic(symbol, name, inst_map):
                 "投信買超": inst["投信"],
                 "外資買超": inst["外資"],
                 "法人認養": "🌟" if is_trust_buying and is_foreign_buying else ("🔷" if is_trust_buying else ""),
+                "支撐1": round(sup1, 2),
+                "支撐2": round(sup2, 2),
+                "壓力1": round(res1, 2),
+                "壓力2": round(res2, 2),
                 "score": score
             }
     except: pass

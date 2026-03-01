@@ -11,16 +11,25 @@ HTML_FILE = os.path.join(BASE_DIR, "index.html")
 
 def get_alice_insight(row):
     symbol = row['代號']
+    name = row.get('名稱', '')
     change = row['漲幅%']
     vol_ratio = row['量能倍率']
+    
+    # 取得支撐壓力點位
+    s1, s2 = row.get('支撐1', 0), row.get('支撐2', 0)
+    r1, r2 = row.get('壓力1', 0), row.get('壓力2', 0)
+    
+    points_info = f"<br><b>📍 關鍵位：</b><br>壓力：{r1} / {r2}<br>支撐：{s1} / {s2}"
+    
     insights = {
-        "8048.TWO": "【長興】今日強勢突破近 20 日高點，量能放大 3.25 倍顯示主力籌碼集中。多頭排列完整，短線具備續航力，建議守 5MA 偏多。",
-        "3632.TWO": "【研勤】今日強勢鎖漲停，成交量放大近 3 倍，顯示低位買盤積極。目前剛突破底部整理區間，突破意圖極強，值得列入首選觀察清單。",
-        "2316.TW": "【楠梓電】今日帶量長紅，技術面呈現漂亮的碗型底噴發。受惠 AI 伺服器供應鏈需求，籌碼面乾淨，後市看好，目標價可上移至前波高點。",
-        "3357.TWO": "【昱捷】今日帶量強攻，漲幅近 10%。在半導體通路升級趨勢下，該股具備基本面支撐。目前多頭排列強勁，若明日能站穩今日高點，則有機會發展成大波段。",
-        "1717.TW": "【長興】今日帶量突破箱頂，量能倍率達 2.63 倍。雖然乖離率稍高，但多頭趨勢明顯，建議等回調 5MA 再行切入。"
+        "8048.TWO": f"【{name}】今日強勢突破近 20 日高點，量能放大顯示主力籌碼集中。多頭排列完整，具續航力。{points_info}",
+        "3632.TWO": f"【{name}】今日強勢鎖漲停，成交量倍增。目前剛突破底部整理區間，突破意圖極強。{points_info}",
+        "2316.TW": f"【{name}】今日帶量長紅，技術面呈現漂亮碗型底噴發。受惠 AI 供應鏈需求，後市看好。{points_info}",
+        "3357.TWO": f"【{name}】今日帶量強攻，漲幅近 10%。在半導體通路升級趨勢下，具備基本面支撐。{points_info}",
+        "1717.TW": f"【{name}】今日帶量突破箱頂，量能倍率高。多頭趨勢明顯，建議關注支撐位防守。{points_info}"
     }
-    default_insight = f"【{symbol}】今日漲幅 {change}%，成交量放大 {vol_ratio} 倍。技術面多頭排列且具突破意圖。"
+    
+    default_insight = f"【{name}】今日漲幅 {change}%，成交量放大 {vol_ratio} 倍。技術面多頭排列且具突破意圖。{points_info}"
     return insights.get(symbol, default_insight)
 
 def get_30d_history(symbol):
