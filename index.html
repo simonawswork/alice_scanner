@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alice Scanner - 每日 AI 選股報告</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-indigo-900 text-white py-12 px-4 shadow-xl">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center space-x-4 mb-4">
+                <span class="text-4xl">🚀</span>
+                <h1 class="text-4xl font-extrabold tracking-tight">Alice Scanner</h1>
+            </div>
+            <p class="text-indigo-200 text-lg">全台股掃描器 - AI 盤後深度解析 (V1.0 Beta)</p>
+            <div class="mt-4 inline-block bg-indigo-800 px-4 py-2 rounded-lg text-sm font-medium">
+                更新時間: 2026-03-01 03:50
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto py-12 px-4">
+        <!-- Top Picks Section -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                <span class="w-2 h-8 bg-indigo-600 mr-3 rounded-full"></span>
+                今日強勢推薦 (Alice Picks)
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+            <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-indigo-600 hover:shadow-2xl transition-all duration-300">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">8048.TWO</h3>
+                        <span class="text-sm text-gray-500">今日漲幅: <span class="text-red-600 font-semibold">9.95%</span></span>
+                    </div>
+                    <div class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded-full font-bold">
+                        🔥 高
+                    </div>
+                </div>
+                <div class="text-gray-600 text-sm leading-relaxed mb-4">
+                    【長興】合成樹脂大廠。今日強勢突破近 20 日高點，量能放大 3.25 倍顯示主力籌碼集中。在特化題材帶動下，多頭排列完整，短線具備續航力，建議守 5MA 偏多。
+                </div>
+                <div class="flex justify-between items-center text-xs text-gray-400">
+                    <span>現價: 61.9</span>
+                    <span>量能倍率: 3.25x</span>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-indigo-600 hover:shadow-2xl transition-all duration-300">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">3632.TWO</h3>
+                        <span class="text-sm text-gray-500">今日漲幅: <span class="text-red-600 font-semibold">9.91%</span></span>
+                    </div>
+                    <div class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded-full font-bold">
+                        🔥 高
+                    </div>
+                </div>
+                <div class="text-gray-600 text-sm leading-relaxed mb-4">
+                    【研勤】車用電子概念。今日強勢鎖漲停，成交量放大近 3 倍，顯示低位買盤積極。目前剛突破底部整理區間，突破意圖極強，值得列入首選觀察清單。
+                </div>
+                <div class="flex justify-between items-center text-xs text-gray-400">
+                    <span>現價: 10.2</span>
+                    <span>量能倍率: 2.98x</span>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-indigo-600 hover:shadow-2xl transition-all duration-300">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">2316.TW</h3>
+                        <span class="text-sm text-gray-500">今日漲幅: <span class="text-red-600 font-semibold">9.76%</span></span>
+                    </div>
+                    <div class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded-full font-bold">
+                        🔥 高
+                    </div>
+                </div>
+                <div class="text-gray-600 text-sm leading-relaxed mb-4">
+                    【楠梓電】PCB 族群轉強。今日帶量長紅，技術面呈現漂亮的碗型底噴發。受惠 AI 伺服器供應鏈需求，籌碼面乾淨，後市看好，目標價可上移至前波高點。
+                </div>
+                <div class="flex justify-between items-center text-xs text-gray-400">
+                    <span>現價: 112.5</span>
+                    <span>量能倍率: 2.93x</span>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-indigo-600 hover:shadow-2xl transition-all duration-300">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">3357.TWO</h3>
+                        <span class="text-sm text-gray-500">今日漲幅: <span class="text-red-600 font-semibold">9.88%</span></span>
+                    </div>
+                    <div class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded-full font-bold">
+                        🔥 高
+                    </div>
+                </div>
+                <div class="text-gray-600 text-sm leading-relaxed mb-4">
+                    【昱捷】電子通路股。今日帶量強攻，漲幅近 10%。在半導體通路升級趨勢下，該股具備基本面支撐。目前多頭排列強勁，若明日能站穩今日高點，則有機會發展成大波段。
+                </div>
+                <div class="flex justify-between items-center text-xs text-gray-400">
+                    <span>現價: 183.5</span>
+                    <span>量能倍率: 2.73x</span>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-indigo-600 hover:shadow-2xl transition-all duration-300">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">1717.TW</h3>
+                        <span class="text-sm text-gray-500">今日漲幅: <span class="text-red-600 font-semibold">9.87%</span></span>
+                    </div>
+                    <div class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded-full font-bold">
+                        🔥 高
+                    </div>
+                </div>
+                <div class="text-gray-600 text-sm leading-relaxed mb-4">
+                    【長興】化工族群領頭羊。今日帶量突破箱頂，量能倍率達 2.63 倍。雖然乖離率稍高，但多頭趨勢明顯，建議等回調 5MA 再行切入。
+                </div>
+                <div class="flex justify-between items-center text-xs text-gray-400">
+                    <span>現價: 69.0</span>
+                    <span>量能倍率: 2.63x</span>
+                </div>
+            </div>
+            
+            </div>
+        </section>
+
+        <!-- Full Table Section -->
+        <section>
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                <span class="w-2 h-8 bg-indigo-600 mr-3 rounded-full"></span>
+                全市場掃描清單 (Top 20)
+            </h2>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-4 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">標的代號</th>
+                            <th class="px-4 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">漲幅%</th>
+                            <th class="px-4 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">現價</th>
+                            <th class="px-4 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">量能倍率</th>
+                            <th class="px-4 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider text-center">多頭排列</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">8048.TWO</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">9.95%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">61.9</td>
+                <td class="px-4 py-3 text-sm text-gray-600">3.25x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">3632.TWO</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">9.91%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">10.2</td>
+                <td class="px-4 py-3 text-sm text-gray-600">2.98x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">2316.TW</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">9.76%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">112.5</td>
+                <td class="px-4 py-3 text-sm text-gray-600">2.93x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">3357.TWO</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">9.88%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">183.5</td>
+                <td class="px-4 py-3 text-sm text-gray-600">2.73x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">1717.TW</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">9.87%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">69.0</td>
+                <td class="px-4 py-3 text-sm text-gray-600">2.63x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">2755.TWO</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">9.68%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">136.0</td>
+                <td class="px-4 py-3 text-sm text-gray-600">2.79x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">3693.TWO</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">9.93%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">454.0</td>
+                <td class="px-4 py-3 text-sm text-gray-600">2.26x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">8183.TWO</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">8.11%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">40.65</td>
+                <td class="px-4 py-3 text-sm text-gray-600">3.98x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">6461.TWO</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">9.89%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">23.9</td>
+                <td class="px-4 py-3 text-sm text-gray-600">2.2x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">4577.TWO</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">9.78%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">86.4</td>
+                <td class="px-4 py-3 text-sm text-gray-600">2.16x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">2338.TW</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">9.94%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">49.2</td>
+                <td class="px-4 py-3 text-sm text-gray-600">1.92x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">1735.TW</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">9.91%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">18.85</td>
+                <td class="px-4 py-3 text-sm text-gray-600">1.95x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">1466.TW</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">9.92%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">19.95</td>
+                <td class="px-4 py-3 text-sm text-gray-600">1.93x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">2406.TW</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">9.98%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">33.05</td>
+                <td class="px-4 py-3 text-sm text-gray-600">1.77x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">4946.TWO</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">9.97%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">160.0</td>
+                <td class="px-4 py-3 text-sm text-gray-600">1.73x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">3147.TWO</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">10.0%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">181.5</td>
+                <td class="px-4 py-3 text-sm text-gray-600">1.7x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">6546.TWO</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">10.0%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">77.0</td>
+                <td class="px-4 py-3 text-sm text-gray-600">1.59x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">4768.TWO</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">9.93%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">465.0</td>
+                <td class="px-4 py-3 text-sm text-gray-600">1.64x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">2489.TW</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">10.0%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">39.6</td>
+                <td class="px-4 py-3 text-sm text-gray-600">1.49x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">8289.TWO</td>
+                <td class="px-4 py-3 text-sm text-red-600 font-bold">9.98%</td>
+                <td class="px-4 py-3 text-sm text-gray-600">35.25</td>
+                <td class="px-4 py-3 text-sm text-gray-600">1.45x</td>
+                <td class="px-4 py-3 text-sm text-center">✅</td>
+            </tr>
+            
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-100 py-12 border-t border-gray-200 mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-gray-500 text-sm">© 2026 Alice Trading Systems. 僅供研究參考，不構成任何投資建議。</p>
+        </div>
+    </footer>
+</body>
+</html>
+        
