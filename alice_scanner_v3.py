@@ -62,14 +62,17 @@ def get_institutional_data():
 # 2. 取得全市場清單
 def get_all_taiwan_symbols():
     codes = []
+    names_map = {}
     for code, item in twstock.codes.items():
         if item.type == '股票' and (item.market == '上市' or item.market == '上櫃'):
             suffix = ".TW" if item.market == '上市' else ".TWO"
-            codes.append(f"{code}{suffix}")
-    return codes
+            symbol = f"{code}{suffix}"
+            codes.append(symbol)
+            names_map[symbol] = item.name
+    return codes, names_map
 
-# 3. 掃描邏輯 (V3.2: 整合上市櫃法人)
-def scan_logic(symbol, inst_map):
+# 3. 掃描邏輯 (V3.2: 整合上市櫃法人 + 名稱)
+def scan_logic(symbol, name, inst_map):
     try:
         stock = yf.Ticker(symbol)
         df = stock.history(period="40d")
@@ -83,22 +86,23 @@ def scan_logic(symbol, inst_map):
         prev = df.iloc[-2]
         
         is_bullish = latest['Close'] > latest['5MA'] > latest['20MA']
-        volume_spike = latest['Volume'] > latest['Vol_MA5'] * 1.3 # 稍微放寬量能門檻
+        volume_spike = latest['Volume'] > latest['Vol_MA5'] * 1.3 
         price_change = (latest['Close'] - prev['Close']) / prev['Close'] * 100
         recent_high = df['Close'].iloc[-20:].max()
         is_breakout = latest['Close'] >= recent_high * 0.98
         
         inst = inst_map.get(symbol, {"外資": 0, "投信": 0})
-        is_trust_buying = inst["投信"] > 100  # 調整門檻：投信買超 100 張即標註
-        is_foreign_buying = inst["外資"] > 500 # 調整門檻：外資買超 500 張即標註
+        is_trust_buying = inst["投信"] > 100  
+        is_foreign_buying = inst["外資"] > 500 
         
         if is_bullish and (volume_spike or price_change > 2.0):
             score = price_change + (latest['Volume'] / latest['Vol_MA5'])
-            if inst["投信"] > 0: score += 5 # 只要法人有買就加分
+            if inst["投信"] > 0: score += 5 
             if inst["外資"] > 0: score += 2
             
             return {
                 "代號": symbol,
+                "名稱": name,
                 "現價": round(latest['Close'], 2),
                 "漲幅%": round(price_change, 2),
                 "量能倍率": round(latest['Volume'] / latest['Vol_MA5'], 2),
@@ -115,11 +119,11 @@ def scan_logic(symbol, inst_map):
 def run_full_scan():
     print("🚀 Alice Scanner V3.2: 啟動『全市場上市櫃籌碼整合』系統...")
     inst_map = get_institutional_data()
-    all_symbols = get_all_taiwan_symbols()
+    all_symbols, names_map = get_all_taiwan_symbols()
     results = []
     
     with ThreadPoolExecutor(max_workers=10) as executor:
-        futures = {executor.submit(scan_logic, s, inst_map): s for s in all_symbols}
+        futures = {executor.submit(scan_logic, s, names_map[s], inst_map): s for s in all_symbols}
         for future in as_completed(futures):
             res = future.result()
             if res: results.append(res)
@@ -129,7 +133,7 @@ def run_full_scan():
         top_picks = df_final.sort_values(by="score", ascending=False).head(20)
         top_picks.to_csv("daily_scan_results.csv", index=False)
         print(f"✅ 掃描完成。Top 10 預覽:")
-        print(top_picks[["代號", "現價", "漲幅%", "投信買超", "外資買超", "法人認養"]].head(10).to_string(index=False))
+        print(top_picks[["代號", "名稱", "現價", "漲幅%", "投信買超", "外資買超"]].head(10).to_string(index=False))
 
 if __name__ == "__main__":
     run_full_scan()

@@ -64,7 +64,7 @@ def generate_html_v3_1():
                 <div class="flex justify-between items-start mb-4">
                     <div>
                         <span class="text-[10px] font-bold text-indigo-500 uppercase tracking-widest block mb-1">TOP {i+1} PICK</span>
-                        <h3 class="text-2xl font-black text-gray-900 tracking-tighter">{symbol}</h3>
+                        <h3 class="text-2xl font-black text-gray-900 tracking-tighter">{row.get('名稱', '')} ({symbol})</h3>
                     </div>
                     <div class="{badge_color} text-white text-[10px] px-2 py-1 rounded-full font-black shadow-lg shadow-rose-200 uppercase italic">
                         {row['漲幅%']}% UP
@@ -109,7 +109,7 @@ def generate_html_v3_1():
             change_class = "text-rose-600" if row['漲幅%'] > 0 else "text-emerald-600"
             table_rows += f"""
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">{row['代號']}</td>
+                <td class="px-6 py-4 text-sm font-black text-gray-900">{row.get('名稱', '')} ({row['代號']})</td>
                 <td class="px-6 py-4 text-sm font-black {change_class}">{row['漲幅%']}%</td>
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">{row['現價']}</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">{row['量能倍率']}x</td>
