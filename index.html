@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alice Scanner | AI 選股報告 V3.0</title>
+    <title>Alice Scanner | Pro Analysis V3.1</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
@@ -15,7 +15,6 @@
 </head>
 <body class="bg-gray-50/50 text-gray-900">
 
-    <!-- Hero Section -->
     <div class="relative bg-slate-950 py-20 px-6 overflow-hidden">
         <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         <div class="max-w-7xl mx-auto relative">
@@ -28,38 +27,32 @@
                         <h2 class="text-indigo-400 font-black tracking-widest text-xs uppercase">Intelligent Quant</h2>
                     </div>
                     <h1 class="text-5xl md:text-6xl font-black text-white tracking-tighter mb-4">
-                        Alice <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-emerald-400">Scanner V3.0</span>
+                        Alice <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-emerald-400">Scanner V3.1</span>
                     </h1>
                     <p class="text-slate-400 text-lg font-medium max-w-xl">
-                        自動化全市場掃描，結合技術指標、法人籌碼與 30 天趨勢圖。
+                        全方位台股雷達：整合 30 日量價 K 線趨勢、法人籌碼與 AI 深度評論。
                     </p>
                 </div>
-                <div class="glass p-6 rounded-2xl border border-white/10 shadow-2xl">
+                <div class="glass p-6 rounded-2xl border border-white/10 shadow-2xl text-center">
                     <div class="text-slate-500 text-[10px] font-bold uppercase mb-1 tracking-widest">Update intelligence</div>
-                    <div class="text-2xl font-black text-slate-100">2026-03-01 06:06</div>
-                    <div class="mt-2 flex items-center space-x-2">
+                    <div class="text-2xl font-black text-slate-100">2026-03-01 06:09</div>
+                    <div class="mt-2 flex items-center justify-center space-x-2">
                         <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                        <span class="text-emerald-400 text-[10px] font-bold uppercase tracking-widest">AI Core Online</span>
+                        <span class="text-emerald-400 text-[10px] font-bold uppercase tracking-widest">System Active</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Main Content -->
     <main class="max-w-7xl mx-auto -mt-10 px-6 pb-24">
-        
         <section class="mb-20">
             <div class="flex items-end justify-between mb-10 px-2">
-                <div>
-                    <h2 class="text-3xl font-black text-gray-900 tracking-tight mb-1">今日核心精選</h2>
-                    <p class="text-gray-500 text-sm font-medium">30 天趨勢與 AI 深度解讀</p>
-                </div>
+                <h2 class="text-3xl font-black text-gray-900 tracking-tight">核心精選標的</h2>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-2xl border border-gray-100 p-6 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full">
+            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-6 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full">
                 <div class="flex justify-between items-start mb-4">
                     <div>
                         <span class="text-[10px] font-bold text-indigo-500 uppercase tracking-widest block mb-1">TOP 1 PICK</span>
@@ -70,25 +63,28 @@
                     </div>
                 </div>
 
-                <!-- 迷你 K 線區域 (30 天日線) -->
-                <div class="w-full h-32 mb-6 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/50 transition-colors">
+                <!-- 混合圖表區域 (價格折線 + 成交量柱狀) -->
+                <div class="w-full h-40 mb-2 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/30 transition-colors">
                     <canvas id="chart_8048_TWO" class="w-full h-full"></canvas>
+                </div>
+                <div class="text-[9px] text-gray-400 font-bold flex justify-between px-1 mb-4 uppercase tracking-tighter">
+                    <span>01/07 - 02/26</span>
+                    <span>30D TREND ANALYSIS</span>
                 </div>
 
                 <div class="flex-grow">
                     <p class="text-gray-600 text-[13px] leading-relaxed font-medium mb-6">
-                        【長興】合成樹脂大廠。今日強勢突破近 20 日高點，量能放大 3.25 倍顯示主力籌碼集中。在特化題材帶動下，多頭排列完整，短線具備續航力，建議守 5MA 偏多。
+                        【長興】今日強勢突破近 20 日高點，量能放大 3.25 倍顯示主力籌碼集中。多頭排列完整，短線具備續航力，建議守 5MA 偏多。
                     </p>
                 </div>
 
-                <!-- 籌碼數據區塊 -->
                 <div class="grid grid-cols-2 gap-3 mb-6 p-3 bg-slate-50/50 rounded-lg border border-slate-100">
                     <div class="flex flex-col">
-                        <span class="text-[9px] font-bold text-slate-400 uppercase">投信</span>
+                        <span class="text-[9px] font-bold text-slate-400 uppercase">投信買超</span>
                         <span class="text-xs font-black text-slate-600">+0</span>
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-[9px] font-bold text-slate-400 uppercase">外資</span>
+                        <span class="text-[9px] font-bold text-slate-400 uppercase">外資買超</span>
                         <span class="text-xs font-black text-slate-600">+0</span>
                     </div>
                 </div>
@@ -96,11 +92,10 @@
                 <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-50">
                     <span class="px-2 py-0.5 bg-green-50 text-green-600 text-[9px] font-bold rounded border border-green-100">多頭排列 ✅</span>
                     <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-[9px] font-bold rounded border border-blue-100">突破意圖 🔥 高</span>
-                    
                 </div>
             </div>
             
-            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-2xl border border-gray-100 p-6 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full">
+            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-6 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full">
                 <div class="flex justify-between items-start mb-4">
                     <div>
                         <span class="text-[10px] font-bold text-indigo-500 uppercase tracking-widest block mb-1">TOP 2 PICK</span>
@@ -111,25 +106,28 @@
                     </div>
                 </div>
 
-                <!-- 迷你 K 線區域 (30 天日線) -->
-                <div class="w-full h-32 mb-6 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/50 transition-colors">
+                <!-- 混合圖表區域 (價格折線 + 成交量柱狀) -->
+                <div class="w-full h-40 mb-2 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/30 transition-colors">
                     <canvas id="chart_6456_TW" class="w-full h-full"></canvas>
+                </div>
+                <div class="text-[9px] text-gray-400 font-bold flex justify-between px-1 mb-4 uppercase tracking-tighter">
+                    <span>01/07 - 02/26</span>
+                    <span>30D TREND ANALYSIS</span>
                 </div>
 
                 <div class="flex-grow">
                     <p class="text-gray-600 text-[13px] leading-relaxed font-medium mb-6">
-                        【6456.TW】今日漲幅 9.9%，成交量顯著放大 3.17 倍。技術面多頭排列且具強勢突破意圖。
+                        【6456.TW】今日漲幅 9.9%，成交量放大 3.17 倍。技術面多頭排列且具突破意圖。
                     </p>
                 </div>
 
-                <!-- 籌碼數據區塊 -->
                 <div class="grid grid-cols-2 gap-3 mb-6 p-3 bg-slate-50/50 rounded-lg border border-slate-100">
                     <div class="flex flex-col">
-                        <span class="text-[9px] font-bold text-slate-400 uppercase">投信</span>
+                        <span class="text-[9px] font-bold text-slate-400 uppercase">投信買超</span>
                         <span class="text-xs font-black text-slate-600">+0</span>
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-[9px] font-bold text-slate-400 uppercase">外資</span>
+                        <span class="text-[9px] font-bold text-slate-400 uppercase">外資買超</span>
                         <span class="text-xs font-black text-slate-600">+0</span>
                     </div>
                 </div>
@@ -137,11 +135,10 @@
                 <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-50">
                     <span class="px-2 py-0.5 bg-green-50 text-green-600 text-[9px] font-bold rounded border border-green-100">多頭排列 ✅</span>
                     <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-[9px] font-bold rounded border border-blue-100">突破意圖 🔥 高</span>
-                    
                 </div>
             </div>
             
-            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-2xl border border-gray-100 p-6 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full">
+            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-6 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full">
                 <div class="flex justify-between items-start mb-4">
                     <div>
                         <span class="text-[10px] font-bold text-indigo-500 uppercase tracking-widest block mb-1">TOP 3 PICK</span>
@@ -152,25 +149,28 @@
                     </div>
                 </div>
 
-                <!-- 迷你 K 線區域 (30 天日線) -->
-                <div class="w-full h-32 mb-6 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/50 transition-colors">
+                <!-- 混合圖表區域 (價格折線 + 成交量柱狀) -->
+                <div class="w-full h-40 mb-2 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/30 transition-colors">
                     <canvas id="chart_3632_TWO" class="w-full h-full"></canvas>
+                </div>
+                <div class="text-[9px] text-gray-400 font-bold flex justify-between px-1 mb-4 uppercase tracking-tighter">
+                    <span>01/07 - 02/26</span>
+                    <span>30D TREND ANALYSIS</span>
                 </div>
 
                 <div class="flex-grow">
                     <p class="text-gray-600 text-[13px] leading-relaxed font-medium mb-6">
-                        【研勤】車用電子概念。今日強勢鎖漲停，成交量放大近 3 倍，顯示低位買盤積極。目前剛突破底部整理區間，突破意圖極強，值得列入首選觀察清單。
+                        【研勤】今日強勢鎖漲停，成交量放大近 3 倍，顯示低位買盤積極。目前剛突破底部整理區間，突破意圖極強，值得列入首選觀察清單。
                     </p>
                 </div>
 
-                <!-- 籌碼數據區塊 -->
                 <div class="grid grid-cols-2 gap-3 mb-6 p-3 bg-slate-50/50 rounded-lg border border-slate-100">
                     <div class="flex flex-col">
-                        <span class="text-[9px] font-bold text-slate-400 uppercase">投信</span>
+                        <span class="text-[9px] font-bold text-slate-400 uppercase">投信買超</span>
                         <span class="text-xs font-black text-slate-600">+0</span>
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-[9px] font-bold text-slate-400 uppercase">外資</span>
+                        <span class="text-[9px] font-bold text-slate-400 uppercase">外資買超</span>
                         <span class="text-xs font-black text-slate-600">+0</span>
                     </div>
                 </div>
@@ -178,11 +178,10 @@
                 <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-50">
                     <span class="px-2 py-0.5 bg-green-50 text-green-600 text-[9px] font-bold rounded border border-green-100">多頭排列 ✅</span>
                     <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-[9px] font-bold rounded border border-blue-100">突破意圖 🔥 高</span>
-                    
                 </div>
             </div>
             
-            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-2xl border border-gray-100 p-6 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full">
+            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-6 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full">
                 <div class="flex justify-between items-start mb-4">
                     <div>
                         <span class="text-[10px] font-bold text-indigo-500 uppercase tracking-widest block mb-1">TOP 4 PICK</span>
@@ -193,25 +192,28 @@
                     </div>
                 </div>
 
-                <!-- 迷你 K 線區域 (30 天日線) -->
-                <div class="w-full h-32 mb-6 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/50 transition-colors">
+                <!-- 混合圖表區域 (價格折線 + 成交量柱狀) -->
+                <div class="w-full h-40 mb-2 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/30 transition-colors">
                     <canvas id="chart_8438_TW" class="w-full h-full"></canvas>
+                </div>
+                <div class="text-[9px] text-gray-400 font-bold flex justify-between px-1 mb-4 uppercase tracking-tighter">
+                    <span>01/07 - 02/26</span>
+                    <span>30D TREND ANALYSIS</span>
                 </div>
 
                 <div class="flex-grow">
                     <p class="text-gray-600 text-[13px] leading-relaxed font-medium mb-6">
-                        【8438.TW】今日漲幅 9.98%，成交量顯著放大 2.76 倍。技術面多頭排列且具強勢突破意圖。
+                        【8438.TW】今日漲幅 9.98%，成交量放大 2.76 倍。技術面多頭排列且具突破意圖。
                     </p>
                 </div>
 
-                <!-- 籌碼數據區塊 -->
                 <div class="grid grid-cols-2 gap-3 mb-6 p-3 bg-slate-50/50 rounded-lg border border-slate-100">
                     <div class="flex flex-col">
-                        <span class="text-[9px] font-bold text-slate-400 uppercase">投信</span>
+                        <span class="text-[9px] font-bold text-slate-400 uppercase">投信買超</span>
                         <span class="text-xs font-black text-slate-600">+0</span>
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-[9px] font-bold text-slate-400 uppercase">外資</span>
+                        <span class="text-[9px] font-bold text-slate-400 uppercase">外資買超</span>
                         <span class="text-xs font-black text-slate-600">+0</span>
                     </div>
                 </div>
@@ -219,11 +221,10 @@
                 <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-50">
                     <span class="px-2 py-0.5 bg-green-50 text-green-600 text-[9px] font-bold rounded border border-green-100">多頭排列 ✅</span>
                     <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-[9px] font-bold rounded border border-blue-100">突破意圖 🔥 高</span>
-                    
                 </div>
             </div>
             
-            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-2xl border border-gray-100 p-6 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full">
+            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-6 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full">
                 <div class="flex justify-between items-start mb-4">
                     <div>
                         <span class="text-[10px] font-bold text-indigo-500 uppercase tracking-widest block mb-1">TOP 5 PICK</span>
@@ -234,25 +235,28 @@
                     </div>
                 </div>
 
-                <!-- 迷你 K 線區域 (30 天日線) -->
-                <div class="w-full h-32 mb-6 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/50 transition-colors">
+                <!-- 混合圖表區域 (價格折線 + 成交量柱狀) -->
+                <div class="w-full h-40 mb-2 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/30 transition-colors">
                     <canvas id="chart_6230_TW" class="w-full h-full"></canvas>
+                </div>
+                <div class="text-[9px] text-gray-400 font-bold flex justify-between px-1 mb-4 uppercase tracking-tighter">
+                    <span>01/07 - 02/26</span>
+                    <span>30D TREND ANALYSIS</span>
                 </div>
 
                 <div class="flex-grow">
                     <p class="text-gray-600 text-[13px] leading-relaxed font-medium mb-6">
-                        【6230.TW】今日漲幅 9.79%，成交量顯著放大 2.9 倍。技術面多頭排列且具強勢突破意圖。
+                        【6230.TW】今日漲幅 9.79%，成交量放大 2.9 倍。技術面多頭排列且具突破意圖。
                     </p>
                 </div>
 
-                <!-- 籌碼數據區塊 -->
                 <div class="grid grid-cols-2 gap-3 mb-6 p-3 bg-slate-50/50 rounded-lg border border-slate-100">
                     <div class="flex flex-col">
-                        <span class="text-[9px] font-bold text-slate-400 uppercase">投信</span>
+                        <span class="text-[9px] font-bold text-slate-400 uppercase">投信買超</span>
                         <span class="text-xs font-black text-slate-600">+0</span>
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-[9px] font-bold text-slate-400 uppercase">外資</span>
+                        <span class="text-[9px] font-bold text-slate-400 uppercase">外資買超</span>
                         <span class="text-xs font-black text-slate-600">+0</span>
                     </div>
                 </div>
@@ -260,11 +264,10 @@
                 <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-50">
                     <span class="px-2 py-0.5 bg-green-50 text-green-600 text-[9px] font-bold rounded border border-green-100">多頭排列 ✅</span>
                     <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-[9px] font-bold rounded border border-blue-100">突破意圖 🔥 高</span>
-                    
                 </div>
             </div>
             
-            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-2xl border border-gray-100 p-6 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full">
+            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-6 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full">
                 <div class="flex justify-between items-start mb-4">
                     <div>
                         <span class="text-[10px] font-bold text-indigo-500 uppercase tracking-widest block mb-1">TOP 6 PICK</span>
@@ -275,25 +278,28 @@
                     </div>
                 </div>
 
-                <!-- 迷你 K 線區域 (30 天日線) -->
-                <div class="w-full h-32 mb-6 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/50 transition-colors">
+                <!-- 混合圖表區域 (價格折線 + 成交量柱狀) -->
+                <div class="w-full h-40 mb-2 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/30 transition-colors">
                     <canvas id="chart_2316_TW" class="w-full h-full"></canvas>
+                </div>
+                <div class="text-[9px] text-gray-400 font-bold flex justify-between px-1 mb-4 uppercase tracking-tighter">
+                    <span>01/07 - 02/26</span>
+                    <span>30D TREND ANALYSIS</span>
                 </div>
 
                 <div class="flex-grow">
                     <p class="text-gray-600 text-[13px] leading-relaxed font-medium mb-6">
-                        【楠梓電】PCB 族群轉強。今日帶量長紅，技術面呈現漂亮的碗型底噴發。受惠 AI 伺服器供應鏈需求，籌碼面乾淨，後市看好，目標價可上移至前波高點。
+                        【楠梓電】今日帶量長紅，技術面呈現漂亮的碗型底噴發。受惠 AI 伺服器供應鏈需求，籌碼面乾淨，後市看好，目標價可上移至前波高點。
                     </p>
                 </div>
 
-                <!-- 籌碼數據區塊 -->
                 <div class="grid grid-cols-2 gap-3 mb-6 p-3 bg-slate-50/50 rounded-lg border border-slate-100">
                     <div class="flex flex-col">
-                        <span class="text-[9px] font-bold text-slate-400 uppercase">投信</span>
+                        <span class="text-[9px] font-bold text-slate-400 uppercase">投信買超</span>
                         <span class="text-xs font-black text-slate-600">+0</span>
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-[9px] font-bold text-slate-400 uppercase">外資</span>
+                        <span class="text-[9px] font-bold text-slate-400 uppercase">外資買超</span>
                         <span class="text-xs font-black text-slate-600">+0</span>
                     </div>
                 </div>
@@ -301,30 +307,28 @@
                 <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-50">
                     <span class="px-2 py-0.5 bg-green-50 text-green-600 text-[9px] font-bold rounded border border-green-100">多頭排列 ✅</span>
                     <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-[9px] font-bold rounded border border-blue-100">突破意圖 🔥 高</span>
-                    
                 </div>
             </div>
             
             </div>
         </section>
 
-        <!-- Full Scan List -->
         <section>
             <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
-                <div class="px-8 py-8 border-b border-gray-50">
-                    <h2 class="text-2xl font-black text-gray-900">全市場強勢股清單 (Top 20)</h2>
-                    <p class="text-gray-400 text-xs font-bold mt-1">REAL-TIME QUANTITATIVE ANALYSIS</p>
+                <div class="px-8 py-8 border-b border-gray-50 flex justify-between items-center">
+                    <h2 class="text-2xl font-black text-gray-900">全市場掃描清單 (Top 20)</h2>
+                    <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Quant Filter Active</span>
                 </div>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left">
                         <thead>
                             <tr class="bg-gray-50/50">
-                                <th class="px-8 py-5 text-[10px] font-black text-gray-400 uppercase tracking-widest">標的代號</th>
-                                <th class="px-8 py-5 text-[10px] font-black text-gray-400 uppercase tracking-widest">漲幅%</th>
-                                <th class="px-8 py-5 text-[10px] font-black text-gray-400 uppercase tracking-widest">現價</th>
-                                <th class="px-8 py-5 text-[10px] font-black text-gray-400 uppercase tracking-widest">量能倍率</th>
-                                <th class="px-8 py-5 text-[10px] font-black text-gray-400 uppercase tracking-widest">投信/外資</th>
-                                <th class="px-8 py-5 text-[10px] font-black text-gray-400 uppercase tracking-widest text-center">多頭格局</th>
+                                <th class="px-8 py-5 text-[10px] font-black text-gray-400 uppercase">標的代號</th>
+                                <th class="px-8 py-5 text-[10px] font-black text-gray-400 uppercase">漲幅%</th>
+                                <th class="px-8 py-5 text-[10px] font-black text-gray-400 uppercase">現價</th>
+                                <th class="px-8 py-5 text-[10px] font-black text-gray-400 uppercase">量能倍率</th>
+                                <th class="px-8 py-5 text-[10px] font-black text-gray-400 uppercase">投信/外資</th>
+                                <th class="px-8 py-5 text-[10px] font-black text-gray-400 uppercase text-center">多頭格局</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-50">
@@ -335,9 +339,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">61.9</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">3.25x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -346,9 +348,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">47.75</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">3.17x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -357,9 +357,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">10.2</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.98x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -368,9 +366,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">69.4</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.76x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -379,9 +375,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">157.0</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.9x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -390,9 +384,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">112.5</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.93x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -401,9 +393,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">183.5</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.73x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -412,9 +402,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">517.0</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.57x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -423,9 +411,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">12.4</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.79x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -434,9 +420,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">69.0</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.63x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -445,9 +429,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">97.0</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.51x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -456,9 +438,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">136.0</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.79x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -467,9 +447,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">22.1</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.39x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -478,9 +456,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">71.5</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.29x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -489,9 +465,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">683.0</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.25x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -500,9 +474,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">570.0</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.38x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -511,9 +483,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">454.0</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.26x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -522,9 +492,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">18.25</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.54x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -533,9 +501,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">40.65</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">3.98x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
@@ -544,9 +510,7 @@
                 <td class="px-6 py-4 text-sm font-bold text-gray-600">23.9</td>
                 <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.2x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center">
-                    <span class="px-2 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold rounded-full">✅</span>
-                </td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
                         </tbody>
@@ -557,49 +521,78 @@
     </main>
 
     <footer class="bg-white py-16 border-t border-gray-100 text-center">
-        <p class="text-gray-400 text-xs font-bold uppercase tracking-[0.3em]">Alice Trading Intelligence V3.0</p>
+        <p class="text-gray-400 text-[10px] font-bold uppercase tracking-[0.4em]">Alice Trading Intelligence V3.1 PRO</p>
     </footer>
 
     <script>
         const chartData = {};
-chartData['chart_8048_TWO'] = [55.3, 55.7, 56.1, 52.0, 52.2, 53.0, 52.6, 53.4, 53.4, 55.3, 56.6, 56.8, 55.0, 53.7, 53.1, 53.2, 53.0, 52.9, 52.9, 54.4, 54.1, 54.0, 54.9, 54.9, 55.5, 55.9, 56.4, 56.8, 56.3, 61.9];
-chartData['chart_6456_TW'] = [43.0, 41.85, 41.85, 42.9, 42.45, 43.1, 43.45, 43.25, 43.9, 43.4, 42.15, 42.65, 42.3, 42.55, 41.7, 41.2, 40.0, 39.2, 38.6, 40.15, 42.3, 40.95, 41.9, 42.15, 43.7, 43.0, 43.15, 44.3, 43.45, 47.75];
-chartData['chart_3632_TWO'] = [9.3, 9.33, 9.31, 9.3, 9.3, 9.33, 9.33, 9.31, 9.54, 9.35, 9.36, 9.36, 9.9, 9.43, 9.43, 9.4, 9.4, 9.4, 9.32, 9.33, 9.29, 9.29, 9.29, 9.29, 9.19, 9.19, 9.18, 9.17, 9.28, 10.2];
-chartData['chart_8438_TW'] = [49.55, 51.9, 50.8, 51.9, 52.0, 56.0, 57.5, 59.0, 62.7, 62.0, 60.1, 63.0, 69.3, 67.9, 67.4, 68.8, 64.0, 57.6, 57.2, 57.2, 55.9, 52.9, 52.7, 53.8, 56.9, 56.1, 58.9, 57.4, 63.1, 69.4];
-chartData['chart_6230_TW'] = [114.0, 112.0, 112.5, 118.0, 116.5, 123.0, 120.0, 119.5, 122.5, 121.0, 120.0, 121.0, 123.5, 121.5, 123.5, 124.5, 122.0, 121.0, 115.0, 115.5, 126.5, 126.0, 120.5, 124.5, 120.0, 119.5, 124.5, 130.0, 143.0, 157.0];
-chartData['chart_2316_TW'] = [97.3, 96.0, 97.7, 101.0, 97.9, 99.5, 100.5, 101.5, 98.8, 99.0, 97.0, 99.0, 98.5, 98.1, 98.5, 100.0, 96.0, 98.1, 93.3, 96.9, 98.9, 95.2, 95.5, 98.0, 96.1, 95.8, 96.9, 98.3, 102.5, 112.5];
+chartData['chart_8048_TWO'] = {"prices": [55.3, 55.7, 56.1, 52.0, 52.2, 53.0, 52.6, 53.4, 53.4, 55.3, 56.6, 56.8, 55.0, 53.7, 53.1, 53.2, 53.0, 52.9, 52.9, 54.4, 54.1, 54.0, 54.9, 54.9, 55.5, 55.9, 56.4, 56.8, 56.3, 61.9], "volumes": [333090, 370300, 285428, 1648101, 669488, 332161, 619003, 621717, 215223, 862729, 4678280, 1042255, 544621, 421026, 353180, 310144, 339031, 345000, 372100, 333152, 285078, 290231, 912123, 362010, 302030, 485248, 274007, 395419, 256112, 2631375], "dates": ["01/07", "01/08", "01/09", "01/12", "01/13", "01/14", "01/15", "01/16", "01/19", "01/20", "01/21", "01/22", "01/23", "01/26", "01/27", "01/28", "01/29", "01/30", "02/02", "02/03", "02/04", "02/05", "02/06", "02/09", "02/10", "02/11", "02/23", "02/24", "02/25", "02/26"]};
+chartData['chart_6456_TW'] = {"prices": [43.0, 41.85, 41.85, 42.9, 42.45, 43.1, 43.45, 43.25, 43.9, 43.4, 42.15, 42.65, 42.3, 42.55, 41.7, 41.2, 40.0, 39.2, 38.6, 40.15, 42.3, 40.95, 41.9, 42.15, 43.7, 43.0, 43.15, 44.3, 43.45, 47.75], "volumes": [1063153, 1125377, 928000, 784000, 759100, 829210, 632033, 872030, 1367888, 1004047, 1155191, 897000, 918200, 998372, 1876740, 1151000, 2433272, 1848531, 854124, 1274000, 4006100, 1421020, 2171120, 2565104, 3047100, 1716112, 2216025, 2271011, 2778000, 15602255], "dates": ["01/07", "01/08", "01/09", "01/12", "01/13", "01/14", "01/15", "01/16", "01/19", "01/20", "01/21", "01/22", "01/23", "01/26", "01/27", "01/28", "01/29", "01/30", "02/02", "02/03", "02/04", "02/05", "02/06", "02/09", "02/10", "02/11", "02/23", "02/24", "02/25", "02/26"]};
+chartData['chart_3632_TWO'] = {"prices": [9.3, 9.33, 9.31, 9.3, 9.3, 9.33, 9.33, 9.31, 9.54, 9.35, 9.36, 9.36, 9.9, 9.43, 9.43, 9.4, 9.4, 9.4, 9.32, 9.33, 9.29, 9.29, 9.29, 9.29, 9.19, 9.19, 9.18, 9.17, 9.28, 10.2], "volumes": [15736, 1150, 15351, 7701, 2148, 12999, 14055, 17904, 17450, 19650, 11087, 1855, 28395, 20609, 13345, 4704, 13310, 36813, 40936, 9795, 8002, 0, 2005, 6971, 21424, 9013, 9165, 11706, 42000, 106270], "dates": ["01/07", "01/08", "01/09", "01/12", "01/13", "01/14", "01/15", "01/16", "01/19", "01/20", "01/21", "01/22", "01/23", "01/26", "01/27", "01/28", "01/29", "01/30", "02/02", "02/03", "02/04", "02/05", "02/06", "02/09", "02/10", "02/11", "02/23", "02/24", "02/25", "02/26"]};
+chartData['chart_8438_TW'] = {"prices": [49.55, 51.9, 50.8, 51.9, 52.0, 56.0, 57.5, 59.0, 62.7, 62.0, 60.1, 63.0, 69.3, 67.9, 67.4, 68.8, 64.0, 57.6, 57.2, 57.2, 55.9, 52.9, 52.7, 53.8, 56.9, 56.1, 58.9, 57.4, 63.1, 69.4], "volumes": [581055, 1190241, 416000, 411117, 341101, 798010, 667100, 507002, 425552, 328000, 227180, 536204, 1577039, 3334353, 863104, 1774200, 1063929, 1917333, 1034020, 1346000, 481060, 797337, 756000, 1858001, 2411241, 803006, 1159527, 645065, 3382302, 7393005], "dates": ["01/07", "01/08", "01/09", "01/12", "01/13", "01/14", "01/15", "01/16", "01/19", "01/20", "01/21", "01/22", "01/23", "01/26", "01/27", "01/28", "01/29", "01/30", "02/02", "02/03", "02/04", "02/05", "02/06", "02/09", "02/10", "02/11", "02/23", "02/24", "02/25", "02/26"]};
+chartData['chart_6230_TW'] = {"prices": [114.0, 112.0, 112.5, 118.0, 116.5, 123.0, 120.0, 119.5, 122.5, 121.0, 120.0, 121.0, 123.5, 121.5, 123.5, 124.5, 122.0, 121.0, 115.0, 115.5, 126.5, 126.0, 120.5, 124.5, 120.0, 119.5, 124.5, 130.0, 143.0, 157.0], "volumes": [59010, 42312, 56025, 133047, 49000, 179099, 61174, 54154, 175122, 79200, 52005, 37000, 148050, 74057, 55006, 99027, 47256, 35005, 97010, 57000, 377202, 624042, 146000, 91008, 111300, 76120, 128045, 126153, 429275, 1046141], "dates": ["01/07", "01/08", "01/09", "01/12", "01/13", "01/14", "01/15", "01/16", "01/19", "01/20", "01/21", "01/22", "01/23", "01/26", "01/27", "01/28", "01/29", "01/30", "02/02", "02/03", "02/04", "02/05", "02/06", "02/09", "02/10", "02/11", "02/23", "02/24", "02/25", "02/26"]};
+chartData['chart_2316_TW'] = {"prices": [97.3, 96.0, 97.7, 101.0, 97.9, 99.5, 100.5, 101.5, 98.8, 99.0, 97.0, 99.0, 98.5, 98.1, 98.5, 100.0, 96.0, 98.1, 93.3, 96.9, 98.9, 95.2, 95.5, 98.0, 96.1, 95.8, 96.9, 98.3, 102.5, 112.5], "volumes": [2265002, 2239196, 4365175, 5691121, 4171928, 2266014, 2818136, 4092331, 3666925, 5335760, 2841012, 3132885, 2151630, 1834410, 2218347, 4394269, 5514297, 3089981, 2953978, 3022095, 3755951, 3017570, 2893618, 3352813, 1941714, 1260653, 1977507, 2983805, 8095191, 20260936], "dates": ["01/07", "01/08", "01/09", "01/12", "01/13", "01/14", "01/15", "01/16", "01/19", "01/20", "01/21", "01/22", "01/23", "01/26", "01/27", "01/28", "01/29", "01/30", "02/02", "02/03", "02/04", "02/05", "02/06", "02/09", "02/10", "02/11", "02/23", "02/24", "02/25", "02/26"]};
 
 
         window.onload = function() {
             Object.keys(chartData).forEach(id => {
                 const ctx = document.getElementById(id).getContext('2d');
+                const data = chartData[id];
+                
                 new Chart(ctx, {
-                    type: 'line',
                     data: {
-                        labels: new Array(30).fill(''),
-                        datasets: [{
-                            data: chartData[id],
-                            borderColor: '#6366f1',
-                            borderWidth: 3,
-                            pointRadius: 0,
-                            fill: true,
-                            backgroundColor: (context) => {
-                                const chart = context.chart;
-                                const {ctx, chartArea} = chart;
-                                if (!chartArea) return null;
-                                const gradient = ctx.createLinearGradient(0, 0, 0, chartArea.bottom);
-                                gradient.addColorStop(0, 'rgba(99, 102, 241, 0.2)');
-                                gradient.addColorStop(1, 'rgba(99, 102, 241, 0)');
-                                return gradient;
+                        labels: data.dates,
+                        datasets: [
+                            {
+                                type: 'line',
+                                label: 'Price',
+                                data: data.prices,
+                                borderColor: '#6366f1',
+                                borderWidth: 3,
+                                pointRadius: 0,
+                                tension: 0.4,
+                                yAxisID: 'y',
+                                fill: true,
+                                backgroundColor: (context) => {
+                                    const chart = context.chart;
+                                    const {ctx, chartArea} = chart;
+                                    if (!chartArea) return null;
+                                    const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+                                    gradient.addColorStop(0, 'rgba(99, 102, 241, 0.2)');
+                                    gradient.addColorStop(1, 'rgba(99, 102, 241, 0)');
+                                    return gradient;
+                                }
                             },
-                            tension: 0.4
-                        }]
+                            {
+                                type: 'bar',
+                                label: 'Volume',
+                                data: data.volumes,
+                                backgroundColor: 'rgba(226, 232, 240, 0.6)',
+                                yAxisID: 'y1',
+                                barPercentage: 0.7,
+                                borderRadius: 2
+                            }
+                        ]
                     },
                     options: {
                         responsive: true,
                         maintainAspectRatio: false,
-                        plugins: { legend: { display: false }, tooltip: { enabled: true } },
-                        scales: { x: { display: false }, y: { display: false } }
+                        plugins: { legend: { display: false }, tooltip: { enabled: true, mode: 'index', intersect: false } },
+                        scales: {
+                            x: { display: false },
+                            y: {
+                                display: false,
+                                type: 'linear',
+                                position: 'left',
+                            },
+                            y1: {
+                                display: false,
+                                type: 'linear',
+                                position: 'right',
+                                grid: { drawOnChartArea: false },
+                                max: Math.max(...data.volumes) * 3 // 讓成交量在下方
+                            }
+                        }
                     }
                 });
             });
