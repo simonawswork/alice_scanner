@@ -3,3 +3,5 @@ __pycache__/
 *.log
 .DS_Store
 google_key.json
+daily_scan_results.csv
+google_key.json
