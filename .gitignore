@@ -5,3 +5,4 @@ __pycache__/
 google_key.json
 daily_scan_results.csv
 google_key.json
+secrets.json
