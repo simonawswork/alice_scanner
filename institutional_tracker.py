@@ -1,50 +1,73 @@
 import requests
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timedelta
 import time
+import json
 
-def get_institutional_investors():
+def get_institutional_data():
     """
-    從證交所抓取今日三大法人買賣超排行 (上市)
-    URL: https://www.twse.com.tw/rwd/zh/fund/T86FU1?date={date}&selectType=ALLBUT0999&response=json
+    精準抓取上市櫃法人數據 (V3.4 強化版)
     """
-    today_str = datetime.now().strftime("%Y%m%d")
-    # 測試用：如果是週末或還沒收盤，可能要抓前一天的數據，這裡先嘗試抓今日
-    url = f"https://www.twse.com.tw/rwd/zh/fund/T86FU1?date={today_str}&selectType=ALLBUT0999&response=json"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+        'Referer': 'https://www.twse.com.tw/zh/page/trading/fund/T86FU1.html'
+    }
     
-    try:
-        response = requests.get(url, timeout=10)
-        data = response.json()
+    inst_map = {}
+    today = datetime.now()
+    
+    # 嘗試找最近 7 天，確保避開連假
+    for i in range(7):
+        target_date = today - timedelta(days=i)
+        if target_date.weekday() >= 5: continue # 跳過週末
         
-        if data.get('stat') != 'OK':
-            print(f"⚠️ 無法取得今日 ({today_str}) 三大法人數據，可能尚未更新或休市。")
-            return None
+        d_str = target_date.strftime("%Y%m%d")
+        # 櫃買中心使用民國日期格式: 115/03/02
+        roc_year = target_date.year - 1911
+        d_tpex = f"{roc_year}/{target_date.strftime('%m/%d')}"
         
-        # 欄位索引: 0:證券代號, 1:證券名稱, 2:外資買賣超, 3:投信買賣超, 4:自營商買賣超...
-        # 具體索引依證交所格式，通常 2:外陸資買進, 3:外陸資賣出, 4:外陸資買賣超
-        # 我們主要看 投信買賣超(10) 與 外資買賣超(4)
+        print(f"🕵️ 嘗試抓取 {d_str} 的法人數據...")
         
-        rows = data.get('data', [])
-        inst_data = []
-        for row in rows:
-            symbol = row[0].strip()
-            name = row[1].strip()
-            foreign_net = int(row[4].replace(',', ''))  # 外資買賣超
-            trust_net = int(row[10].replace(',', ''))   # 投信買賣超
+        # A. 上市 (TWSE)
+        url_twse = f"https://www.twse.com.tw/rwd/zh/fund/T86FU1?date={d_str}&selectType=ALLBUT0999&response=json"
+        # B. 上櫃 (TPEx)
+        url_tpex = f"https://www.tpex.org.tw/web/stock/aftertrading/fund/t86/t86_result.php?l=zh-tw&d={d_tpex}&stk_typ=EW"
+        
+        try:
+            # 抓上市
+            resp_twse = requests.get(url_twse, headers=headers, timeout=10)
+            data_twse = resp_twse.json()
             
-            inst_data.append({
-                "symbol": f"{symbol}.TW",
-                "外資買賣超": foreign_net,
-                "投信買賣超": trust_net,
-                "法人合計": foreign_net + trust_net
-            })
-            
-        return pd.DataFrame(inst_data)
-    except Exception as e:
-        print(f"❌ 抓取法人數據出錯: {e}")
-        return None
+            if data_twse.get('stat') == 'OK':
+                for row in data_twse.get('data', []):
+                    sid = row[0].strip()
+                    # 0:代號, 1:名稱, 2:外資買, 3:外資賣, 4:外資淨, 10:投信淨
+                    foreign = int(row[4].replace(',', ''))
+                    trust = int(row[10].replace(',', ''))
+                    inst_map[f"{sid}.TW"] = {"外資": foreign, "投信": trust}
+                
+                # 抓上櫃 (只有在上市 OK 時才抓，確保日期同步)
+                resp_tpex = requests.get(url_tpex, headers=headers, timeout=10)
+                data_tpex = resp_tpex.json()
+                if data_tpex.get('aaData'):
+                    for row in data_tpex.get('aaData', []):
+                        sid = row[0].strip()
+                        # 上櫃格式: 0:代號, 5:外資淨, 11:投信淨
+                        foreign = int(row[5].replace(',', ''))
+                        trust = int(row[11].replace(',', ''))
+                        inst_map[f"{sid}.TWO"] = {"外資": foreign, "投信": trust}
+                
+                print(f"✅ 成功! 取得 {d_str} 數據，共計 {len(inst_map)} 檔標的。")
+                return inst_map
+            else:
+                print(f"❌ {d_str} 尚無數據 (證交所回傳: {data_twse.get('stat')})")
+        except Exception as e:
+            print(f"⚠️ 解析 {d_str} 出錯: {e}")
+        
+        time.sleep(2) # 禮貌延遲
+        
+    return {}
 
 if __name__ == "__main__":
-    df = get_institutional_investors()
-    if df is not None:
-        print(df.sort_values(by="投信買賣超", ascending=False).head(10))
+    data = get_institutional_data()
+    print(f"測試結果: 抓到 {len(data)} 筆數據。")
