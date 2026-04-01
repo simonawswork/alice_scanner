@@ -4,8 +4,10 @@
 BASE_DIR="/Users/simonhuang/.openclaw/workspace-kira/Dev/alice_scanner"
 VENV_PYTHON="$BASE_DIR/venv/bin/python3"
 
-# API Keys
-export GEMINI_API_KEY="AIzaSyAPOKGQUft_OFKi2lnfSfbrYqRpGKQyiU0"
+# API Keys (從 ~/.openclaw/.env 讀取)
+if [ -f "$HOME/.openclaw/.env" ]; then
+    export $(grep -v '^#' "$HOME/.openclaw/.env" | xargs)
+fi
 
 echo "--------------------------------------------------"
 echo "🚀 [$(date)] Alice Scanner 自動更新流程啟動..."
