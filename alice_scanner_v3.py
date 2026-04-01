@@ -2,9 +2,13 @@ import yfinance as yf
 import pandas as pd
 import twstock
 import requests
+import urllib3
 from datetime import datetime, timedelta
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+
+# 抑制 SSL 警告（TWSE 憑證缺少 Subject Key Identifier）
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # 1. 抓取法人數據 (整合上市 TWSE + 上櫃 TPEx)
 def get_institutional_data():
@@ -26,14 +30,14 @@ def get_institutional_data():
         date_tpex = f"{target_date.year - 1911}/{target_date.strftime('%m/%d')}" # 115/03/01
         
         # --- A. 抓取上市 (TWSE) ---
-        url_twse = f"https://www.twse.com.tw/rwd/zh/fund/T86FU1?date={date_twse}&selectType=ALLBUT0999&response=json"
+        url_twse = f"https://www.twse.com.tw/rwd/zh/fund/T86?date={date_twse}&selectType=ALLBUT0999&response=json"
         # --- B. 抓取上櫃 (TPEx) ---
         url_tpex = f"https://www.tpex.org.tw/web/stock/aftertrading/fund/t86/t86_result.php?l=zh-tw&d={date_tpex}&stk_typ=EW&_={int(time.time()*1000)}"
         
         try:
             headers = {'User-Agent': 'Mozilla/5.0'}
             # 處理上市
-            res_twse = requests.get(url_twse, headers=headers, timeout=10).json()
+            res_twse = requests.get(url_twse, headers=headers, timeout=10, verify=False).json()
             if res_twse.get('stat') == 'OK':
                 for row in res_twse.get('data', []):
                     symbol = row[0].strip()
@@ -42,7 +46,7 @@ def get_institutional_data():
                     inst_map[f"{symbol}.TW"] = {"外資": foreign, "投信": trust}
                 
                 # 處理上櫃 (只有在上市有數據時才抓上櫃，確保日期同步)
-                res_tpex = requests.get(url_tpex, headers=headers, timeout=10).json()
+                res_tpex = requests.get(url_tpex, headers=headers, timeout=10, verify=False).json()
                 if res_tpex.get('iTotalRecords', 0) > 0:
                     for row in res_tpex.get('aaData', []):
                         symbol = row[0].strip()
