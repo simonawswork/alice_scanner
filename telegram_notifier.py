@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 # 設定路徑
-BASE_DIR = "/home/ubuntu/.openclaw/workspace/alice_scanner"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CSV_FILE = os.path.join(BASE_DIR, "daily_scan_results.csv")
 SECRETS_FILE = os.path.join(BASE_DIR, "secrets.json")
 
@@ -29,7 +29,7 @@ def send_telegram_notification():
             foreign = row.get('外資買超', 0)
             inst_tag = "🌟" if trust > 500 and foreign > 1000 else ("🔷" if trust > 500 else "")
             
-            msg += f"{i+1}. {row['代號']} | 漲幅: {row['漲幅%']}% {inst_tag}\n"
+            msg += f"{i+1}. {row.get('名稱', '')} {row['代號']} | 漲幅: {row['漲幅%']}% {inst_tag}\n"
             msg += f"   💰 現價: {row['現價']} | 量能: {row['量能倍率']}x\n"
             msg += f"   📊 法人: 投信{trust:+,d} / 外資{foreign:+,d}\n\n"
         
@@ -38,8 +38,8 @@ def send_telegram_notification():
         msg += f"https://simonawswork.github.io/alice_scanner/\n"
         
         # 4. 透過 openclaw 指令發送 (安全且方便)
-        safe_msg = msg.replace("'", "")
-        os.system(f"/usr/bin/openclaw message send --target \"{target}\" --message \"{safe_msg}\" > /dev/null 2>&1")
+        safe_msg = msg.replace("'", "").replace('"', '')
+        os.system(f'/opt/homebrew/bin/openclaw message send --channel telegram --target "{target}" --message "{safe_msg}" > /dev/null 2>&1')
         
         print(f"✅ Telegram 今日選股推播成功發送至 {target}！")
 
