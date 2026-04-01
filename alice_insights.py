@@ -3,69 +3,110 @@ import gspread
 import os
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
+from google import genai
 
 # 設定
-BASE_DIR = "/home/ubuntu/.openclaw/workspace/alice_scanner"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CSV_FILE = os.path.join(BASE_DIR, "daily_scan_results.csv")
 GOOGLE_KEY = os.path.join(BASE_DIR, "google_key.json")
 SHEET_NAME = "Alice_Daily_Report"
 
-# Alice AI 專業評論邏輯 (根據數據與市場知識庫生成)
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
+GEMINI_MODEL = "gemini-2.5-flash"
+
+
 def get_alice_insight(row):
+    """呼叫 Gemini API 為單一個股生成 AI 專業評論"""
     symbol = row['代號']
-    change = row['漲幅%']
-    vol_ratio = row['量能倍率']
-    
-    # 這裡模擬 Alice 的深度分析 (之後可串接外部 LLM API 或由我直接撰寫)
-    insights = {
-        "2406.TW": "【國碩】太陽能族群轉強。今日帶量長紅突破長期壓力位，且 5MA 與 20MA 剛完成黃金交叉。受惠綠能政策預期，具備續攻動能，建議守 5MA 偏多操作。",
-        "4946.TWO": "【辣椒】遊戲族群冷門股突圍。今日強勢鎖漲停，量能倍率極高，顯示主力介入明顯。由於股本小，易暴漲暴跌，適合極短線快進快出，不宜長抱。",
-        "3147.TWO": "【大綜】資服概念股。今日創下波段新高，且突破意圖評分為『🔥 高』。技術面呈現漂亮的碗型底噴發，成交量溫和放大，顯示籌碼乾淨，後市看好。",
-        "6546.TWO": "【正基】網通模組需求回溫。今日跳空漲停，量能倍率達 1.59 倍。雖然乖離率稍高，但多頭排列強勁，若明日能站穩今日高點，則有機會發展成大波段趨勢。",
-        "4768.TWO": "【晶呈科技】特種氣體龍頭。今日帶量強攻，漲幅近 10%。在半導體製程升級趨勢下，該股具備基本面支撐。目前剛突破整理區間，突破意圖極強，值得列入首選觀察清單。"
-    }
-    
-    # 預設評論 (如果不在名單內)
-    default_insight = f"【{symbol}】今日漲幅 {change}%，成交量顯著放大 {vol_ratio} 倍。技術面呈現多頭排列且具備強勢突破意圖。建議觀察明日開盤力道，若不破今日低點，仍有上攻空間。"
-    
-    return insights.get(symbol, default_insight)
+    name = row.get('名稱', symbol)
+    change = row.get('漲幅%', 'N/A')
+    vol_ratio = row.get('量能倍率', 'N/A')
+    above_5ma = row.get('站上5MA', 'N/A')
+    above_20ma = row.get('站上20MA', 'N/A')
+    near_high = row.get('突破意圖', 'N/A')
+    foreign = row.get('外資(張)', 'N/A')
+    trust = row.get('投信(張)', 'N/A')
+    support = row.get('支撐', 'N/A')
+    resistance = row.get('壓力', 'N/A')
+
+    prompt = f"""你是一位台股專業分析師 Alice，請根據以下技術面與籌碼面數據，為這檔股票撰寫一段 100~150 字的繁體中文投資分析評論。
+
+股票代號: {symbol}
+股票名稱: {name}
+今日漲幅: {change}%
+量能倍率 (vs 20日均量): {vol_ratio} 倍
+站上 5MA: {above_5ma}
+站上 20MA: {above_20ma}
+突破意圖 (近 20 日新高帶): {near_high}
+外資買賣超(張): {foreign}
+投信買賣超(張): {trust}
+支撐價位: {support}
+壓力價位: {resistance}
+
+請以【{name}】開頭，分析技術面訊號與籌碼動向，給出操作建議（守哪個位置、短線或波段），語氣專業但易懂。不要加入免責聲明。"""
+
+    try:
+        client = genai.Client(api_key=GEMINI_API_KEY)
+        response = client.models.generate_content(
+            model=GEMINI_MODEL,
+            contents=prompt,
+        )
+        return response.text.strip()
+    except Exception as e:
+        print(f"  ⚠️ Gemini 評論失敗 ({symbol}): {e}")
+        return f"【{name}】今日漲幅 {change}%，量能放大 {vol_ratio} 倍，技術面多頭排列，建議持續追蹤。"
+
 
 def generate_and_upload_insights():
+    if not GEMINI_API_KEY:
+        print("❌ 未設定 GEMINI_API_KEY 環境變數")
+        return
+
     try:
         # 1. 讀取掃描結果
-        df = pd.read_csv(CSV_FILE).head(5) # 只分析前 5 檔
-        
-        # 2. 生成 Alice 評論
-        df['Alice AI 專業評論'] = df.apply(get_alice_insight, axis=1)
-        
-        # 3. 準備上傳到 Google Sheets
-        scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-        creds = ServiceAccountCredentials.from_json_keyfile_name(GOOGLE_KEY, scope)
-        client = gspread.authorize(creds)
-        
-        # 4. 更新當日分頁
-        sh = client.open(SHEET_NAME)
-        tab_name = datetime.now().strftime("%Y-%m-%d")
-        ws = sh.worksheet(tab_name)
-        
-        # 將評論更新到 H 欄 (對應第 8 欄)
-        headers = ["Alice AI 專業評論"]
-        values = [[row['Alice AI 專業評論']] for _, row in df.iterrows()]
-        
-        # 寫入標題與內容
-        ws.update('H1', [headers])
-        ws.update('H2', values)
-        
-        print(f"✨ Alice AI 評論已成功同步到 Google Sheets ({tab_name})！")
-        
-        # 同時顯示在終端機
+        df = pd.read_csv(CSV_FILE).head(5)  # 只分析前 5 檔
+        print(f"📂 讀取掃描結果：{len(df)} 檔")
+
+        # 2. 逐筆呼叫 Gemini 生成評論
         print("\n🤖 【Alice AI 每日盤後深度評論】")
         print("-" * 60)
-        for i, row in df.iterrows():
-            print(f"📍 {row['代號']} : {row['Alice AI 專業評論']}\n")
-        
+        insights = []
+        for _, row in df.iterrows():
+            print(f"  🔍 分析 {row.get('名稱', row['代號'])} ({row['代號']})...")
+            comment = get_alice_insight(row)
+            insights.append(comment)
+            print(f"  ✅ {comment[:60]}...\n")
+
+        df['Alice AI 專業評論'] = insights
+
+        # 3. 顯示完整結果
+        print("\n📋 完整評論：")
+        for _, row in df.iterrows():
+            print(f"📍 {row['代號']} {row.get('名稱', '')}：\n{row['Alice AI 專業評論']}\n")
+
+        # 4. 上傳到 Google Sheets（需要 google_key.json）
+        if os.path.exists(GOOGLE_KEY):
+            scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+            creds = ServiceAccountCredentials.from_json_keyfile_name(GOOGLE_KEY, scope)
+            client = gspread.authorize(creds)
+
+            sh = client.open(SHEET_NAME)
+            tab_name = datetime.now().strftime("%Y-%m-%d")
+            ws = sh.worksheet(tab_name)
+
+            ws.update('H1', [["Alice AI 專業評論"]])
+            ws.update('H2', [[row['Alice AI 專業評論']] for _, row in df.iterrows()])
+
+            print(f"✨ Alice AI 評論已成功同步到 Google Sheets ({tab_name})！")
+        else:
+            print("⚠️  未找到 google_key.json，跳過 Google Sheets 同步")
+
+    except FileNotFoundError:
+        print(f"❌ 找不到掃描結果檔案：{CSV_FILE}")
+        print("   請先執行 alice_scanner_v3.py")
     except Exception as e:
-        print(f"❌ 評論同步失敗: {e}")
+        print(f"❌ 評論生成失敗: {e}")
+
 
 if __name__ == "__main__":
     generate_and_upload_insights()

@@ -4,7 +4,7 @@ import os
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
 
-BASE_DIR = "/home/ubuntu/.openclaw/workspace/alice_scanner"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 GOOGLE_KEY = os.path.join(BASE_DIR, "google_key.json")
 CSV_FILE = os.path.join(BASE_DIR, "daily_scan_results.csv")
 SHEET_NAME = "Alice_Daily_Report"

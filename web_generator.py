@@ -5,7 +5,7 @@ import os
 from datetime import datetime, timedelta
 
 # 設定路徑
-BASE_DIR = "/home/ubuntu/.openclaw/workspace/alice_scanner"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CSV_FILE = os.path.join(BASE_DIR, "daily_scan_results.csv")
 HTML_FILE = os.path.join(BASE_DIR, "index.html")
 
