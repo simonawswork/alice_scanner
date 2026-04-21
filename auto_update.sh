@@ -17,19 +17,25 @@ cd $BASE_DIR
 
 # 0. 檢查今天是否為台灣交易日
 echo "📅 檢查今日是否為交易日..."
-IS_TRADING_DAY=$($VENV_PYTHON -c "
+TRADING_CHECK_LOG=$($VENV_PYTHON -c "
 import requests, urllib3
-from datetime import datetime, timedelta
+from datetime import datetime
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 today = datetime.now().strftime('%Y%m%d')
 url = f'https://www.twse.com.tw/rwd/zh/fund/T86?date={today}&selectType=ALLBUT0999&response=json'
 try:
     r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=10, verify=False)
+    preview = r.text[:300].replace('\n',' ')
     data = r.json()
-    print('yes' if data.get('stat') == 'OK' else 'no')
-except:
+    stat = data.get('stat', 'N/A')
+    print(f'[TRADING_CHECK] HTTP {r.status_code} stat={stat} preview={preview}')
+    print('yes' if stat == 'OK' else 'no')
+except Exception as e:
+    print(f'[TRADING_CHECK] Exception: {e}')
     print('no')
 ")
+echo "$TRADING_CHECK_LOG"
+IS_TRADING_DAY=$(echo "$TRADING_CHECK_LOG" | tail -1)
 
 if [ "$IS_TRADING_DAY" != "yes" ]; then
     echo "🚫 今日非交易日，跳過執行。"
