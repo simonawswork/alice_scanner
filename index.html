@@ -35,7 +35,7 @@
                 </div>
                 <div class="glass p-6 rounded-2xl border border-white/10 shadow-2xl text-center">
                     <div class="text-slate-500 text-[10px] font-bold uppercase mb-1 tracking-widest">Update intelligence</div>
-                    <div class="text-2xl font-black text-slate-100">2026-04-29 17:01</div>
+                    <div class="text-2xl font-black text-slate-100">2026-04-30 17:01</div>
                     <div class="mt-2 flex items-center justify-center space-x-2">
                         <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
                         <span class="text-emerald-400 text-[10px] font-bold uppercase tracking-widest">System Active</span>
@@ -56,10 +56,53 @@
                 <div class="flex justify-between items-start mb-4">
                     <div>
                         <span class="text-[10px] font-bold text-indigo-500 uppercase tracking-widest block mb-1">TOP 1 PICK</span>
+                        <h3 class="text-2xl font-black text-gray-900 tracking-tighter">志聖 (2467.TW)</h3>
+                    </div>
+                    <div class="bg-rose-500 text-white text-[10px] px-2 py-1 rounded-full font-black shadow-lg shadow-rose-200 uppercase italic">
+                        9.93% UP
+                    </div>
+                </div>
+
+                <!-- 混合圖表區域 (價格折線 + 成交量柱狀) -->
+                <div class="w-full h-40 mb-2 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/30 transition-colors">
+                    <canvas id="chart_2467_TW" class="w-full h-full"></canvas>
+                </div>
+                <div class="text-[9px] text-gray-400 font-bold flex justify-between px-1 mb-4 uppercase tracking-tighter">
+                    <span>03/18 - 04/30</span>
+                    <span>30D TREND ANALYSIS</span>
+                </div>
+
+                <div class="flex-grow">
+                    <p class="text-gray-600 text-[13px] leading-relaxed font-medium mb-6">
+                        【志聖】今日漲幅 9.93%，成交量放大 2.22 倍。技術面多頭排列且具突破意圖。<br><b>📍 關鍵位：</b><br>壓力：612.0 / 612.0<br>支撐：485.0 / 390.0
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mb-6 p-3 bg-slate-50/50 rounded-lg border border-slate-100">
+                    <div class="flex flex-col">
+                        <span class="text-[9px] font-bold text-slate-400 uppercase">投信買超</span>
+                        <span class="text-xs font-black text-rose-500">+3,000</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-[9px] font-bold text-slate-400 uppercase">外資買超</span>
+                        <span class="text-xs font-black text-rose-500">+82,973</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-50">
+                    <span class="px-2 py-0.5 bg-green-50 text-green-600 text-[9px] font-bold rounded border border-green-100">多頭排列 ✅</span>
+                    <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-[9px] font-bold rounded border border-blue-100">突破意圖 🔥 高</span>
+                </div>
+            </div>
+            
+            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-6 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <span class="text-[10px] font-bold text-indigo-500 uppercase tracking-widest block mb-1">TOP 2 PICK</span>
                         <h3 class="text-2xl font-black text-gray-900 tracking-tighter">直得 (1597.TW)</h3>
                     </div>
                     <div class="bg-rose-500 text-white text-[10px] px-2 py-1 rounded-full font-black shadow-lg shadow-rose-200 uppercase italic">
-                        7.41% UP
+                        9.96% UP
                     </div>
                 </div>
 
@@ -68,13 +111,13 @@
                     <canvas id="chart_1597_TW" class="w-full h-full"></canvas>
                 </div>
                 <div class="text-[9px] text-gray-400 font-bold flex justify-between px-1 mb-4 uppercase tracking-tighter">
-                    <span>03/17 - 04/29</span>
+                    <span>03/18 - 04/30</span>
                     <span>30D TREND ANALYSIS</span>
                 </div>
 
                 <div class="flex-grow">
                     <p class="text-gray-600 text-[13px] leading-relaxed font-medium mb-6">
-                        【直得】今日漲幅 7.41%，成交量放大 2.76 倍。技術面多頭排列且具突破意圖。<br><b>📍 關鍵位：</b><br>壓力：133.5 / 133.5<br>支撐：102.5 / 84.1
+                        【直得】今日漲幅 9.96%，成交量放大 0.77 倍。技術面多頭排列且具突破意圖。<br><b>📍 關鍵位：</b><br>壓力：143.5 / 153.55<br>支撐：102.5 / 85.6
                     </p>
                 </div>
 
@@ -98,86 +141,43 @@
             <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-6 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full">
                 <div class="flex justify-between items-start mb-4">
                     <div>
-                        <span class="text-[10px] font-bold text-indigo-500 uppercase tracking-widest block mb-1">TOP 2 PICK</span>
-                        <h3 class="text-2xl font-black text-gray-900 tracking-tighter">有成精密 (4949.TW)</h3>
-                    </div>
-                    <div class="bg-rose-500 text-white text-[10px] px-2 py-1 rounded-full font-black shadow-lg shadow-rose-200 uppercase italic">
-                        9.16% UP
-                    </div>
-                </div>
-
-                <!-- 混合圖表區域 (價格折線 + 成交量柱狀) -->
-                <div class="w-full h-40 mb-2 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/30 transition-colors">
-                    <canvas id="chart_4949_TW" class="w-full h-full"></canvas>
-                </div>
-                <div class="text-[9px] text-gray-400 font-bold flex justify-between px-1 mb-4 uppercase tracking-tighter">
-                    <span>03/17 - 04/29</span>
-                    <span>30D TREND ANALYSIS</span>
-                </div>
-
-                <div class="flex-grow">
-                    <p class="text-gray-600 text-[13px] leading-relaxed font-medium mb-6">
-                        【有成精密】今日漲幅 9.16%，成交量放大 1.46 倍。技術面多頭排列且具突破意圖。<br><b>📍 關鍵位：</b><br>壓力：102.5 / 109.68<br>支撐：82.8 / 63.3
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-2 gap-3 mb-6 p-3 bg-slate-50/50 rounded-lg border border-slate-100">
-                    <div class="flex flex-col">
-                        <span class="text-[9px] font-bold text-slate-400 uppercase">投信買超</span>
-                        <span class="text-xs font-black text-rose-500">+2,000</span>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="text-[9px] font-bold text-slate-400 uppercase">外資買超</span>
-                        <span class="text-xs font-black text-slate-600">-21,000</span>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-50">
-                    <span class="px-2 py-0.5 bg-green-50 text-green-600 text-[9px] font-bold rounded border border-green-100">多頭排列 ✅</span>
-                    <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-[9px] font-bold rounded border border-blue-100">突破意圖 🔥 高</span>
-                </div>
-            </div>
-            
-            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-6 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full">
-                <div class="flex justify-between items-start mb-4">
-                    <div>
                         <span class="text-[10px] font-bold text-indigo-500 uppercase tracking-widest block mb-1">TOP 3 PICK</span>
-                        <h3 class="text-2xl font-black text-gray-900 tracking-tighter">穎漢 (4562.TW)</h3>
+                        <h3 class="text-2xl font-black text-gray-900 tracking-tighter">矽力*-KY (6415.TW)</h3>
                     </div>
                     <div class="bg-rose-500 text-white text-[10px] px-2 py-1 rounded-full font-black shadow-lg shadow-rose-200 uppercase italic">
-                        9.88% UP
+                        8.65% UP
                     </div>
                 </div>
 
                 <!-- 混合圖表區域 (價格折線 + 成交量柱狀) -->
                 <div class="w-full h-40 mb-2 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/30 transition-colors">
-                    <canvas id="chart_4562_TW" class="w-full h-full"></canvas>
+                    <canvas id="chart_6415_TW" class="w-full h-full"></canvas>
                 </div>
                 <div class="text-[9px] text-gray-400 font-bold flex justify-between px-1 mb-4 uppercase tracking-tighter">
-                    <span>03/17 - 04/29</span>
+                    <span>03/18 - 04/30</span>
                     <span>30D TREND ANALYSIS</span>
                 </div>
 
                 <div class="flex-grow">
                     <p class="text-gray-600 text-[13px] leading-relaxed font-medium mb-6">
-                        【穎漢】今日漲幅 9.88%，成交量放大 3.51 倍。技術面多頭排列且具突破意圖。<br><b>📍 關鍵位：</b><br>壓力：38.7 / 38.7<br>支撐：30.1 / 29.5
+                        【矽力*-KY】今日漲幅 8.65%，成交量放大 0.81 倍。技術面多頭排列且具突破意圖。<br><b>📍 關鍵位：</b><br>壓力：442.5 / 442.5<br>支撐：306.0 / 267.0
                     </p>
                 </div>
 
                 <div class="grid grid-cols-2 gap-3 mb-6 p-3 bg-slate-50/50 rounded-lg border border-slate-100">
                     <div class="flex flex-col">
                         <span class="text-[9px] font-bold text-slate-400 uppercase">投信買超</span>
-                        <span class="text-xs font-black text-slate-600">+0</span>
+                        <span class="text-xs font-black text-rose-500">+386,000</span>
                     </div>
                     <div class="flex flex-col">
                         <span class="text-[9px] font-bold text-slate-400 uppercase">外資買超</span>
-                        <span class="text-xs font-black text-rose-500">+62,000</span>
+                        <span class="text-xs font-black text-rose-500">+1,338,226</span>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-50">
                     <span class="px-2 py-0.5 bg-green-50 text-green-600 text-[9px] font-bold rounded border border-green-100">多頭排列 ✅</span>
-                    <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-[9px] font-bold rounded border border-blue-100">突破意圖 🔥 高</span>
+                    <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-[9px] font-bold rounded border border-blue-100">突破意圖 中</span>
                 </div>
             </div>
             
@@ -185,36 +185,36 @@
                 <div class="flex justify-between items-start mb-4">
                     <div>
                         <span class="text-[10px] font-bold text-indigo-500 uppercase tracking-widest block mb-1">TOP 4 PICK</span>
-                        <h3 class="text-2xl font-black text-gray-900 tracking-tighter">佳必琪 (6197.TW)</h3>
+                        <h3 class="text-2xl font-black text-gray-900 tracking-tighter">威盛 (2388.TW)</h3>
                     </div>
                     <div class="bg-rose-500 text-white text-[10px] px-2 py-1 rounded-full font-black shadow-lg shadow-rose-200 uppercase italic">
-                        9.84% UP
+                        9.93% UP
                     </div>
                 </div>
 
                 <!-- 混合圖表區域 (價格折線 + 成交量柱狀) -->
                 <div class="w-full h-40 mb-2 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/30 transition-colors">
-                    <canvas id="chart_6197_TW" class="w-full h-full"></canvas>
+                    <canvas id="chart_2388_TW" class="w-full h-full"></canvas>
                 </div>
                 <div class="text-[9px] text-gray-400 font-bold flex justify-between px-1 mb-4 uppercase tracking-tighter">
-                    <span>03/17 - 04/29</span>
+                    <span>03/18 - 04/30</span>
                     <span>30D TREND ANALYSIS</span>
                 </div>
 
                 <div class="flex-grow">
                     <p class="text-gray-600 text-[13px] leading-relaxed font-medium mb-6">
-                        【佳必琪】今日漲幅 9.84%，成交量放大 1.86 倍。技術面多頭排列且具突破意圖。<br><b>📍 關鍵位：</b><br>壓力：206.5 / 220.96<br>支撐：165.5 / 156.5
+                        【威盛】今日漲幅 9.93%，成交量放大 0.91 倍。技術面多頭排列且具突破意圖。<br><b>📍 關鍵位：</b><br>壓力：83.7 / 83.7<br>支撐：61.1 / 49.7
                     </p>
                 </div>
 
                 <div class="grid grid-cols-2 gap-3 mb-6 p-3 bg-slate-50/50 rounded-lg border border-slate-100">
                     <div class="flex flex-col">
                         <span class="text-[9px] font-bold text-slate-400 uppercase">投信買超</span>
-                        <span class="text-xs font-black text-slate-600">+0</span>
+                        <span class="text-xs font-black text-rose-500">+12,000</span>
                     </div>
                     <div class="flex flex-col">
                         <span class="text-[9px] font-bold text-slate-400 uppercase">外資買超</span>
-                        <span class="text-xs font-black text-rose-500">+197,125</span>
+                        <span class="text-xs font-black text-slate-600">-2,432,740</span>
                     </div>
                 </div>
 
@@ -228,36 +228,36 @@
                 <div class="flex justify-between items-start mb-4">
                     <div>
                         <span class="text-[10px] font-bold text-indigo-500 uppercase tracking-widest block mb-1">TOP 5 PICK</span>
-                        <h3 class="text-2xl font-black text-gray-900 tracking-tighter">一詮 (2486.TW)</h3>
+                        <h3 class="text-2xl font-black text-gray-900 tracking-tighter">南電 (8046.TW)</h3>
                     </div>
                     <div class="bg-rose-500 text-white text-[10px] px-2 py-1 rounded-full font-black shadow-lg shadow-rose-200 uppercase italic">
-                        9.98% UP
+                        9.72% UP
                     </div>
                 </div>
 
                 <!-- 混合圖表區域 (價格折線 + 成交量柱狀) -->
                 <div class="w-full h-40 mb-2 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/30 transition-colors">
-                    <canvas id="chart_2486_TW" class="w-full h-full"></canvas>
+                    <canvas id="chart_8046_TW" class="w-full h-full"></canvas>
                 </div>
                 <div class="text-[9px] text-gray-400 font-bold flex justify-between px-1 mb-4 uppercase tracking-tighter">
-                    <span>03/17 - 04/29</span>
+                    <span>03/18 - 04/30</span>
                     <span>30D TREND ANALYSIS</span>
                 </div>
 
                 <div class="flex-grow">
                     <p class="text-gray-600 text-[13px] leading-relaxed font-medium mb-6">
-                        【一詮】今日漲幅 9.98%，成交量放大 3.46 倍。技術面多頭排列且具突破意圖。<br><b>📍 關鍵位：</b><br>壓力：253.5 / 271.24<br>支撐：183.0 / 132.0
+                        【南電】今日漲幅 9.72%，成交量放大 0.94 倍。技術面多頭排列且具突破意圖。<br><b>📍 關鍵位：</b><br>壓力：1005.0 / 1075.35<br>支撐：708.0 / 551.0
                     </p>
                 </div>
 
                 <div class="grid grid-cols-2 gap-3 mb-6 p-3 bg-slate-50/50 rounded-lg border border-slate-100">
                     <div class="flex flex-col">
                         <span class="text-[9px] font-bold text-slate-400 uppercase">投信買超</span>
-                        <span class="text-xs font-black text-slate-600">+0</span>
+                        <span class="text-xs font-black text-rose-500">+1,362,003</span>
                     </div>
                     <div class="flex flex-col">
                         <span class="text-[9px] font-bold text-slate-400 uppercase">外資買超</span>
-                        <span class="text-xs font-black text-slate-600">-25,926</span>
+                        <span class="text-xs font-black text-slate-600">-5,465,604</span>
                     </div>
                 </div>
 
@@ -271,36 +271,36 @@
                 <div class="flex justify-between items-start mb-4">
                     <div>
                         <span class="text-[10px] font-bold text-indigo-500 uppercase tracking-widest block mb-1">TOP 6 PICK</span>
-                        <h3 class="text-2xl font-black text-gray-900 tracking-tighter">鼎元 (2426.TW)</h3>
+                        <h3 class="text-2xl font-black text-gray-900 tracking-tighter">臻鼎-KY (4958.TW)</h3>
                     </div>
                     <div class="bg-rose-500 text-white text-[10px] px-2 py-1 rounded-full font-black shadow-lg shadow-rose-200 uppercase italic">
-                        9.98% UP
+                        9.92% UP
                     </div>
                 </div>
 
                 <!-- 混合圖表區域 (價格折線 + 成交量柱狀) -->
                 <div class="w-full h-40 mb-2 bg-slate-50 rounded-xl relative overflow-hidden group-hover:bg-indigo-50/30 transition-colors">
-                    <canvas id="chart_2426_TW" class="w-full h-full"></canvas>
+                    <canvas id="chart_4958_TW" class="w-full h-full"></canvas>
                 </div>
                 <div class="text-[9px] text-gray-400 font-bold flex justify-between px-1 mb-4 uppercase tracking-tighter">
-                    <span>03/17 - 04/29</span>
+                    <span>03/18 - 04/30</span>
                     <span>30D TREND ANALYSIS</span>
                 </div>
 
                 <div class="flex-grow">
                     <p class="text-gray-600 text-[13px] leading-relaxed font-medium mb-6">
-                        【鼎元】今日漲幅 9.98%，成交量放大 3.4 倍。技術面多頭排列且具突破意圖。<br><b>📍 關鍵位：</b><br>壓力：59.5 / 63.67<br>支撐：46.1 / 31.5
+                        【臻鼎-KY】今日漲幅 9.92%，成交量放大 0.6 倍。技術面多頭排列且具突破意圖。<br><b>📍 關鍵位：</b><br>壓力：421.0 / 450.47<br>支撐：258.0 / 213.0
                     </p>
                 </div>
 
                 <div class="grid grid-cols-2 gap-3 mb-6 p-3 bg-slate-50/50 rounded-lg border border-slate-100">
                     <div class="flex flex-col">
                         <span class="text-[9px] font-bold text-slate-400 uppercase">投信買超</span>
-                        <span class="text-xs font-black text-slate-600">+0</span>
+                        <span class="text-xs font-black text-rose-500">+4,198,607</span>
                     </div>
                     <div class="flex flex-col">
                         <span class="text-[9px] font-bold text-slate-400 uppercase">外資買超</span>
-                        <span class="text-xs font-black text-slate-600">-143,050</span>
+                        <span class="text-xs font-black text-slate-600">-9,467,425</span>
                     </div>
                 </div>
 
@@ -334,181 +334,181 @@
                         <tbody class="divide-y divide-gray-50">
                             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
+                <td class="px-6 py-4 text-sm font-black text-gray-900">志聖 (2467.TW)</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">9.93%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">609.0</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.22x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">+3,000 / +82,973</td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
                 <td class="px-6 py-4 text-sm font-black text-gray-900">直得 (1597.TW)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">7.41%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">130.5</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.76x</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">9.96%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">143.5</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">0.77x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+2,000 / +49,000</td>
                 <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">有成精密 (4949.TW)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">9.16%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">102.5</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">1.46x</td>
-                <td class="px-6 py-4 text-sm font-bold text-rose-500">+2,000 / -21,000</td>
+                <td class="px-6 py-4 text-sm font-black text-gray-900">矽力*-KY (6415.TW)</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">8.65%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">427.0</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">0.81x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">+386,000 / +1,338,226</td>
                 <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">穎漢 (4562.TW)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">9.88%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">37.25</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">3.51x</td>
-                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +62,000</td>
-                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
-            </tr>
-            
-            <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">佳必琪 (6197.TW)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">9.84%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">206.5</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">1.86x</td>
-                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +197,125</td>
-                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
-            </tr>
-            
-            <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">一詮 (2486.TW)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">9.98%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">253.5</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">3.46x</td>
-                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / -25,926</td>
-                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
-            </tr>
-            
-            <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">鼎元 (2426.TW)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">9.98%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">59.5</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">3.4x</td>
-                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / -143,050</td>
-                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
-            </tr>
-            
-            <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">旺宏 (2337.TW)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">4.7%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">167.0</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">1.59x</td>
-                <td class="px-6 py-4 text-sm font-bold text-rose-500">+367,000 / +29,694,190</td>
-                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
-            </tr>
-            
-            <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">光菱 (8032.TWO)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">9.96%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">40.3</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">3.26x</td>
-                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
-                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
-            </tr>
-            
-            <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">豪勉 (6218.TWO)</td>
+                <td class="px-6 py-4 text-sm font-black text-gray-900">威盛 (2388.TW)</td>
                 <td class="px-6 py-4 text-sm font-black text-rose-600">9.93%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">39.3</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">3.04x</td>
-                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">78.6</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">0.91x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">+12,000 / -2,432,740</td>
                 <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">三顧 (3224.TWO)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">9.95%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">52.5</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">3.0x</td>
-                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
+                <td class="px-6 py-4 text-sm font-black text-gray-900">南電 (8046.TW)</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">9.72%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">1005.0</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">0.94x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">+1,362,003 / -5,465,604</td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
+                <td class="px-6 py-4 text-sm font-black text-gray-900">臻鼎-KY (4958.TW)</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">9.92%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">421.0</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">0.6x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">+4,198,607 / -9,467,425</td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
+                <td class="px-6 py-4 text-sm font-black text-gray-900">新代 (7750.TW)</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">7.29%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">2575.0</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">0.92x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">+54,000 / +24,850</td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
+                <td class="px-6 py-4 text-sm font-black text-gray-900">大銀微系統 (4576.TW)</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">9.9%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">222.0</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.82x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +123,000</td>
                 <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
                 <td class="px-6 py-4 text-sm font-black text-gray-900">宇隆 (2233.TW)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">9.2%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">273.0</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">1.74x</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">9.89%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">300.0</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.56x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +134,000</td>
                 <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">大量 (3167.TW)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">9.7%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">814.0</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">1.24x</td>
-                <td class="px-6 py-4 text-sm font-bold text-rose-500">-230,000 / +144,950</td>
+                <td class="px-6 py-4 text-sm font-black text-gray-900">天虹 (6937.TW)</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">9.97%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">331.0</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.38x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +86,637</td>
                 <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">健策 (3653.TW)</td>
+                <td class="px-6 py-4 text-sm font-black text-gray-900">圓剛 (2417.TW)</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">9.91%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">47.15</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">3.76x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / -259,000</td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
+                <td class="px-6 py-4 text-sm font-black text-gray-900">金耘國際 (4950.TWO)</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">9.79%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">17.95</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">3.81x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
+                <td class="px-6 py-4 text-sm font-black text-gray-900">康聯訊 (3672.TWO)</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">9.63%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">11.95</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">3.96x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
+                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
+            </tr>
+            
+            <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
+                <td class="px-6 py-4 text-sm font-black text-gray-900">聰泰 (5474.TWO)</td>
                 <td class="px-6 py-4 text-sm font-black text-rose-600">10.0%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">5445.0</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">0.71x</td>
-                <td class="px-6 py-4 text-sm font-bold text-rose-500">-64,524 / +81,179</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">154.0</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">3.59x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
                 <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">日勝化 (1735.TW)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">4.74%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">28.75</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">0.94x</td>
-                <td class="px-6 py-4 text-sm font-bold text-rose-500">+1,000 / +195,912</td>
+                <td class="px-6 py-4 text-sm font-black text-gray-900">欣興 (3037.TW)</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">9.96%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">883.0</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">1.42x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">-1,375,929 / +2,271,650</td>
                 <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">芯鼎 (6695.TW)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">9.9%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">45.5</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.73x</td>
-                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / -35,699</td>
+                <td class="px-6 py-4 text-sm font-black text-gray-900">高力 (8996.TW)</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">9.65%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">1250.0</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">1.53x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">-20,000 / +170,041</td>
                 <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">喬鼎 (3057.TW)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">9.81%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">20.7</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.8x</td>
-                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / -23,997</td>
+                <td class="px-6 py-4 text-sm font-black text-gray-900">尚茂 (8291.TWO)</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">9.98%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">22.05</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.91x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
                 <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">台亞 (2340.TW)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">9.9%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">38.85</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">0.57x</td>
-                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +97,000</td>
+                <td class="px-6 py-4 text-sm font-black text-gray-900">百德 (4563.TWO)</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">10.0%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">50.6</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.76x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
                 <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">聯策 (6658.TW)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">9.74%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">146.5</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">0.72x</td>
-                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +248,483</td>
+                <td class="px-6 py-4 text-sm font-black text-gray-900">日成-KY (4807.TW)</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">9.79%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">20.75</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.32x</td>
+                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / -10,000</td>
                 <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
             
             <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">汎銓 (6830.TW)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">7.96%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">773.0</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.37x</td>
-                <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +3,010</td>
-                <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
-            </tr>
-            
-            <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-50">
-                <td class="px-6 py-4 text-sm font-black text-gray-900">矽瑪 (3511.TWO)</td>
-                <td class="px-6 py-4 text-sm font-black text-rose-600">9.95%</td>
-                <td class="px-6 py-4 text-sm font-bold text-gray-600">23.2</td>
-                <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.22x</td>
+                <td class="px-6 py-4 text-sm font-black text-gray-900">精拓科 (4951.TWO)</td>
+                <td class="px-6 py-4 text-sm font-black text-rose-600">9.68%</td>
+                <td class="px-6 py-4 text-sm font-bold text-gray-600">119.0</td>
+                <td class="px-6 py-4 text-sm font-bold text-indigo-500">2.41x</td>
                 <td class="px-6 py-4 text-sm font-bold text-rose-500">+0 / +0</td>
                 <td class="px-6 py-4 text-sm text-center font-bold text-gray-400">✅</td>
             </tr>
@@ -526,12 +526,12 @@
 
     <script>
         const chartData = {};
-chartData['chart_1597_TW'] = {"prices": [80.0, 80.8, 79.1, 80.3, 83.8, 81.9, 88.6, 85.0, 85.4, 87.3, 84.5, 86.5, 85.7, 89.6, 93.4, 90.1, 99.1, 109.0, 119.5, 115.5, 117.0, 117.5, 115.5, 114.0, 115.5, 107.5, 108.5, 110.5, 121.5, 130.5], "volumes": [593294, 347120, 236167, 495019, 3654318, 1063120, 2717211, 1594366, 786300, 1362403, 1712059, 739212, 586033, 1728440, 2368098, 1572645, 1694209, 1238222, 5661334, 11458281, 6924865, 6559626, 4978586, 2830635, 8937983, 5378211, 2092341, 3174439, 2946478, 16770235], "dates": ["03/17", "03/18", "03/19", "03/20", "03/23", "03/24", "03/25", "03/26", "03/27", "03/30", "03/31", "04/01", "04/02", "04/07", "04/08", "04/09", "04/10", "04/13", "04/14", "04/15", "04/16", "04/17", "04/20", "04/21", "04/22", "04/23", "04/24", "04/27", "04/28", "04/29"]};
-chartData['chart_4949_TW'] = {"prices": [64.88, 66.24, 70.45, 64.49, 61.85, 59.6, 65.5, 64.0, 70.4, 66.5, 67.0, 67.9, 64.1, 65.3, 70.0, 77.0, 84.7, 93.1, 92.3, 89.0, 88.4, 90.4, 89.3, 89.5, 91.9, 88.8, 86.9, 86.2, 93.9, 102.5], "volumes": [7789397, 5725496, 7324400, 5739582, 3111404, 2383795, 2829507, 5935739, 5637872, 11289670, 9088594, 9709805, 4206166, 2413939, 3410282, 7550546, 6908806, 10107290, 14548230, 9746316, 1341497, 1515260, 1715935, 1027961, 1645402, 1728614, 808831, 558136, 1482010, 1893624], "dates": ["03/17", "03/18", "03/19", "03/20", "03/23", "03/24", "03/25", "03/26", "03/27", "03/30", "03/31", "04/01", "04/02", "04/07", "04/08", "04/09", "04/10", "04/13", "04/14", "04/15", "04/16", "04/17", "04/20", "04/21", "04/22", "04/23", "04/24", "04/27", "04/28", "04/29"]};
-chartData['chart_4562_TW'] = {"prices": [34.0, 33.35, 32.5, 32.6, 31.8, 31.4, 32.1, 31.4, 31.05, 30.35, 29.6, 30.1, 29.8, 29.8, 30.85, 30.75, 30.55, 31.1, 34.2, 37.6, 35.7, 35.5, 35.6, 34.6, 34.5, 32.3, 31.5, 30.85, 33.9, 37.25], "volumes": [286021, 266066, 158300, 298015, 199200, 152095, 135020, 159000, 165980, 145050, 272000, 133000, 189000, 328085, 230085, 213085, 197085, 165000, 624100, 4777051, 3653030, 592000, 565201, 427300, 512085, 549410, 324124, 357096, 490000, 4062353], "dates": ["03/17", "03/18", "03/19", "03/20", "03/23", "03/24", "03/25", "03/26", "03/27", "03/30", "03/31", "04/01", "04/02", "04/07", "04/08", "04/09", "04/10", "04/13", "04/14", "04/15", "04/16", "04/17", "04/20", "04/21", "04/22", "04/23", "04/24", "04/27", "04/28", "04/29"]};
-chartData['chart_6197_TW'] = {"prices": [191.5, 195.0, 196.0, 195.5, 180.0, 173.5, 176.0, 169.5, 171.5, 162.5, 158.5, 163.0, 157.5, 173.0, 182.0, 179.0, 179.0, 179.5, 179.5, 180.0, 180.0, 185.5, 189.0, 186.0, 187.5, 187.5, 174.5, 178.0, 188.0, 206.5], "volumes": [13640358, 8555121, 4144063, 4889156, 4623784, 4351640, 2737317, 3213945, 1929826, 2245737, 2361670, 1632748, 1697795, 3394133, 7568349, 2919526, 3142761, 2310581, 3228504, 3227510, 3214346, 6830761, 4561866, 4303940, 3438467, 8483575, 8400015, 3453116, 3679535, 14246992], "dates": ["03/17", "03/18", "03/19", "03/20", "03/23", "03/24", "03/25", "03/26", "03/27", "03/30", "03/31", "04/01", "04/02", "04/07", "04/08", "04/09", "04/10", "04/13", "04/14", "04/15", "04/16", "04/17", "04/20", "04/21", "04/22", "04/23", "04/24", "04/27", "04/28", "04/29"]};
-chartData['chart_2486_TW'] = {"prices": [162.5, 163.0, 161.0, 155.0, 143.0, 146.0, 154.5, 147.5, 149.0, 146.5, 132.5, 145.0, 149.0, 144.5, 158.5, 174.0, 185.5, 194.0, 191.5, 181.0, 185.5, 185.0, 198.0, 204.5, 219.0, 222.0, 224.0, 224.5, 230.5, 253.5], "volumes": [30164891, 32067931, 16010776, 2741317, 2247855, 1856190, 1680006, 1483629, 1295876, 810299, 2039076, 707700, 1706316, 12795245, 11656236, 23595479, 32454200, 23905295, 19683055, 3642134, 1432184, 1591649, 2750401, 2642857, 3260782, 3269649, 2165921, 2114746, 2239794, 22021131], "dates": ["03/17", "03/18", "03/19", "03/20", "03/23", "03/24", "03/25", "03/26", "03/27", "03/30", "03/31", "04/01", "04/02", "04/07", "04/08", "04/09", "04/10", "04/13", "04/14", "04/15", "04/16", "04/17", "04/20", "04/21", "04/22", "04/23", "04/24", "04/27", "04/28", "04/29"]};
-chartData['chart_2426_TW'] = {"prices": [36.8, 38.35, 34.7, 35.0, 33.5, 32.95, 36.2, 33.6, 36.0, 35.0, 31.7, 34.85, 38.3, 35.55, 39.1, 43.0, 47.3, 52.0, 52.9, 49.3, 53.2, 54.4, 55.7, 53.4, 52.2, 48.7, 47.7, 49.2, 54.1, 59.5], "volumes": [8889886, 7333851, 5222332, 3643215, 2621446, 2226660, 3684328, 3168097, 1974546, 1581293, 2395023, 1542421, 11887945, 53296990, 47193758, 22830435, 26287217, 10002362, 71470985, 6614409, 3511015, 3952300, 4639379, 5320980, 2972890, 4810461, 3031657, 3379568, 5860454, 36387453], "dates": ["03/17", "03/18", "03/19", "03/20", "03/23", "03/24", "03/25", "03/26", "03/27", "03/30", "03/31", "04/01", "04/02", "04/07", "04/08", "04/09", "04/10", "04/13", "04/14", "04/15", "04/16", "04/17", "04/20", "04/21", "04/22", "04/23", "04/24", "04/27", "04/28", "04/29"]};
+chartData['chart_2467_TW'] = {"prices": [401.0, 371.5, 367.5, 355.5, 368.0, 404.5, 414.0, 414.5, 404.0, 405.0, 398.5, 392.0, 408.5, 449.0, 493.5, 542.0, 549.0, 548.0, 510.0, 515.0, 550.0, 570.0, 560.0, 597.0, 538.0, 538.0, 495.5, 545.0, 554.0, 609.0], "volumes": [938227, 2495980, 2383598, 2266019, 3317636, 6941061, 9190316, 4351491, 4078374, 9459351, 7202571, 3813281, 4250494, 4659974, 6851844, 5431819, 7114682, 5526518, 1434311, 966799, 1026516, 850464, 462182, 736343, 643248, 820930, 733596, 564909, 5255664, 5894745], "dates": ["03/18", "03/19", "03/20", "03/23", "03/24", "03/25", "03/26", "03/27", "03/30", "03/31", "04/01", "04/02", "04/07", "04/08", "04/09", "04/10", "04/13", "04/14", "04/15", "04/16", "04/17", "04/20", "04/21", "04/22", "04/23", "04/24", "04/27", "04/28", "04/29", "04/30"]};
+chartData['chart_1597_TW'] = {"prices": [80.8, 79.1, 80.3, 83.8, 81.9, 88.6, 85.0, 85.4, 87.3, 84.5, 86.5, 85.7, 89.6, 93.4, 90.1, 99.1, 109.0, 119.5, 115.5, 117.0, 117.5, 115.5, 114.0, 115.5, 107.5, 108.5, 110.5, 121.5, 130.5, 143.5], "volumes": [347120, 236167, 495019, 3654318, 1063120, 2717211, 1594366, 786300, 1362403, 1712059, 739212, 586033, 1728440, 2368098, 1572645, 1694209, 1238222, 5661334, 11458281, 6924865, 6559626, 4978586, 2830635, 8937983, 5378211, 2092341, 3174439, 2946478, 16678675, 4516421], "dates": ["03/18", "03/19", "03/20", "03/23", "03/24", "03/25", "03/26", "03/27", "03/30", "03/31", "04/01", "04/02", "04/07", "04/08", "04/09", "04/10", "04/13", "04/14", "04/15", "04/16", "04/17", "04/20", "04/21", "04/22", "04/23", "04/24", "04/27", "04/28", "04/29", "04/30"]};
+chartData['chart_6415_TW'] = {"prices": [286.98, 278.06, 283.51, 276.08, 280.04, 290.95, 296.0, 293.0, 285.5, 281.0, 282.5, 274.0, 281.5, 299.5, 282.0, 279.5, 273.0, 269.5, 275.0, 302.5, 332.5, 365.5, 394.0, 402.5, 415.5, 436.0, 420.0, 413.0, 393.0, 427.0], "volumes": [8968977, 6644085, 9757164, 4242361, 8554371, 5469505, 8757385, 4400937, 3727561, 6260678, 5033527, 3783467, 2574596, 5498645, 4714922, 4262845, 3897441, 5694868, 3384634, 10314125, 15833374, 5680067, 19790925, 14863666, 25400416, 5351274, 6326016, 3932080, 2498621, 3509226], "dates": ["03/18", "03/19", "03/20", "03/23", "03/24", "03/25", "03/26", "03/27", "03/30", "03/31", "04/01", "04/02", "04/07", "04/08", "04/09", "04/10", "04/13", "04/14", "04/15", "04/16", "04/17", "04/20", "04/21", "04/22", "04/23", "04/24", "04/27", "04/28", "04/29", "04/30"]};
+chartData['chart_2388_TW'] = {"prices": [51.7, 50.3, 55.3, 56.1, 52.7, 51.9, 52.4, 54.5, 52.0, 52.2, 52.5, 51.4, 49.7, 54.6, 54.2, 53.5, 55.4, 56.8, 62.4, 61.4, 65.3, 66.2, 72.8, 80.0, 76.1, 78.2, 74.7, 74.1, 71.5, 78.6], "volumes": [4883455, 2833000, 9248275, 29540235, 16497762, 7039876, 4224900, 10509909, 6649235, 5038600, 4433908, 2239022, 3180308, 5497488, 8656701, 2852143, 5958545, 7970520, 21905497, 17700626, 14551836, 21009972, 15148031, 9369557, 40157609, 45680667, 24807363, 16715843, 8221761, 21330436], "dates": ["03/18", "03/19", "03/20", "03/23", "03/24", "03/25", "03/26", "03/27", "03/30", "03/31", "04/01", "04/02", "04/07", "04/08", "04/09", "04/10", "04/13", "04/14", "04/15", "04/16", "04/17", "04/20", "04/21", "04/22", "04/23", "04/24", "04/27", "04/28", "04/29", "04/30"]};
+chartData['chart_8046_TW'] = {"prices": [567.0, 561.0, 541.0, 534.0, 491.0, 540.0, 569.0, 561.0, 580.0, 522.0, 574.0, 568.0, 624.0, 637.0, 669.0, 667.0, 655.0, 646.0, 656.0, 721.0, 724.0, 796.0, 789.0, 803.0, 795.0, 874.0, 913.0, 932.0, 916.0, 1005.0], "volumes": [18334709, 19121051, 19629090, 15277046, 30072587, 10726972, 30559025, 25050492, 19320765, 22415117, 17302447, 46263456, 22976129, 31538395, 24195071, 20419720, 8814345, 14464302, 17575621, 21254342, 25227723, 17055757, 29481976, 18698804, 29493909, 22112991, 27647924, 23286333, 17288197, 20898194], "dates": ["03/18", "03/19", "03/20", "03/23", "03/24", "03/25", "03/26", "03/27", "03/30", "03/31", "04/01", "04/02", "04/07", "04/08", "04/09", "04/10", "04/13", "04/14", "04/15", "04/16", "04/17", "04/20", "04/21", "04/22", "04/23", "04/24", "04/27", "04/28", "04/29", "04/30"]};
+chartData['chart_4958_TW'] = {"prices": [207.0, 209.5, 209.5, 201.0, 197.0, 207.5, 218.5, 230.0, 226.5, 206.5, 219.5, 213.5, 225.0, 247.5, 263.5, 265.0, 257.5, 251.5, 251.5, 256.5, 282.0, 310.0, 315.0, 315.0, 325.0, 347.5, 358.5, 394.0, 383.0, 421.0], "volumes": [32995962, 37371781, 31229748, 20977476, 21060991, 21870625, 42197602, 54567921, 32591650, 42552020, 26402227, 39243161, 37153512, 28247540, 50794415, 33198266, 25628573, 26354764, 22908167, 22693410, 42123860, 46468059, 76629681, 41558954, 111005718, 100773126, 95292695, 74669352, 70190139, 46206905], "dates": ["03/18", "03/19", "03/20", "03/23", "03/24", "03/25", "03/26", "03/27", "03/30", "03/31", "04/01", "04/02", "04/07", "04/08", "04/09", "04/10", "04/13", "04/14", "04/15", "04/16", "04/17", "04/20", "04/21", "04/22", "04/23", "04/24", "04/27", "04/28", "04/29", "04/30"]};
 
 
         window.onload = function() {
